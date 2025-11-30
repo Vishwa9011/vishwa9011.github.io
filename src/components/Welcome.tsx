@@ -18,7 +18,7 @@ const renderText = (text: string, className: string, baseWeight = 400) => {
 };
 
 const setupTextHover = (container: HTMLElement, type: TextType) => {
-    if (!container) return;
+    if (!container) return () => {};
     const letters = container.querySelectorAll('span');
     const { min, max, default: base } = FONT_WEIGHTS[type];
 
@@ -61,8 +61,8 @@ const Welcome = () => {
         const titleCleanup = setupTextHover(titleRef.current as HTMLElement, 'title');
         const subtitleCleanup = setupTextHover(subtitleRef.current as HTMLElement, 'subtitle');
         return () => {
-            titleCleanup && titleCleanup();
-            subtitleCleanup && subtitleCleanup();
+            titleCleanup();
+            subtitleCleanup();
         };
     }, []);
 
@@ -70,6 +70,10 @@ const Welcome = () => {
         <section id="welcome">
             <p ref={subtitleRef}>{renderText("Hey, I'm Vishwa Vivek! Welcome to my", 'text-3xl font-georama', 100)}</p>
             <h1 ref={titleRef}>{renderText('portfolio', 'text-9xl italic font-georama', 400)}</h1>
+
+            <div className="small-screen">
+                <p>This portfolio is designed for desktop/tablet screens only</p>
+            </div>
         </section>
     );
 };
