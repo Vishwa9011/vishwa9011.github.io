@@ -19,6 +19,11 @@ const Dock = () => {
         if (!app.canOpen) return;
         const id = app.id as WindowKey;
         const window = windows[id];
+
+        if (!window) {
+            throw new Error(`Window with id ${id} does not exist in the store.`);
+        }
+
         if (window.isOpen) {
             closeWindow(id);
         } else {
