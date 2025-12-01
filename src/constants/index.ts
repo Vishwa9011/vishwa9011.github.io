@@ -1,3 +1,5 @@
+import type { Location, LocationsMap, WindowConfig } from '@/types';
+
 const navLinks = [
     {
         id: 1,
@@ -371,7 +373,7 @@ const WORK_LOCATION = {
             ],
         },
     ],
-};
+} satisfies Location;
 
 const ABOUT_LOCATION = {
     id: 2,
@@ -424,7 +426,7 @@ const ABOUT_LOCATION = {
             ],
         },
     ],
-};
+} satisfies Location;
 
 const RESUME_LOCATION = {
     id: 3,
@@ -443,7 +445,7 @@ const RESUME_LOCATION = {
             // href: "/your/resume/path.pdf",
         },
     ],
-};
+} satisfies Location;
 
 const TRASH_LOCATION = {
     id: 4,
@@ -471,14 +473,14 @@ const TRASH_LOCATION = {
             imageUrl: '/images/trash-2.png',
         },
     ],
-};
+} satisfies Location;
 
 export const locations = {
     work: WORK_LOCATION,
     about: ABOUT_LOCATION,
     resume: RESUME_LOCATION,
     trash: TRASH_LOCATION,
-};
+} satisfies LocationsMap;
 
 const INITIAL_Z_INDEX = 1000;
 
@@ -491,6 +493,6 @@ const WINDOW_CONFIG = {
     terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-};
+} satisfies WindowConfig;
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
