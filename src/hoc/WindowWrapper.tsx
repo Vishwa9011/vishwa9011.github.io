@@ -10,6 +10,7 @@ import { useLayoutEffect, useRef } from 'react';
 const WindowWrapper = (Component: any, windowKey: WindowKey) => {
     const Wrapped = (props: any) => {
         const { windows, focusWindow } = useWindowStore();
+        console.log('windows: ', windows);
         const { isOpen, zIndex } = windows[windowKey];
         const ref = useRef<HTMLDivElement>(null);
 
