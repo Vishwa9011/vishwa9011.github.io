@@ -1,5 +1,11 @@
 import type { Location, LocationsMap, WindowConfig } from '@/types';
 
+type NavIcon = {
+    id: number;
+    img: string;
+    action?: 'theme';
+};
+
 const navLinks = [
     {
         id: 1,
@@ -18,7 +24,7 @@ const navLinks = [
     },
 ] as const;
 
-const navIcons = [
+const navIcons: ReadonlyArray<NavIcon> = [
     {
         id: 1,
         img: '/icons/wifi.svg',
@@ -34,8 +40,9 @@ const navIcons = [
     {
         id: 4,
         img: '/icons/mode.svg',
+        action: 'theme',
     },
-];
+] as const;
 
 const dockApps = [
     {

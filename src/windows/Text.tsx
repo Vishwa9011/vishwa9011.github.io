@@ -18,17 +18,17 @@ const Text = () => {
                 <h2>{data.name}</h2>
             </div>
 
-            <div className="space-y-4 bg-white p-5">
+            <div className="bg-card space-y-4 p-5">
                 {imageSrc && (
                     <div className="overflow-hidden rounded-lg">
                         <img src={imageSrc} alt={data.name} className="h-48 w-full object-cover" />
                     </div>
                 )}
 
-                {data.subtitle && <h3 className="text-lg font-semibold text-gray-800">{data.subtitle}</h3>}
+                {data.subtitle && <h3 className="text-foreground text-lg font-semibold">{data.subtitle}</h3>}
 
                 {data.description?.map((paragraph, index) => (
-                    <p key={index} className="text-sm leading-relaxed text-gray-700">
+                    <p key={index} className="text-muted-foreground text-sm leading-relaxed">
                         {paragraph}
                     </p>
                 ))}

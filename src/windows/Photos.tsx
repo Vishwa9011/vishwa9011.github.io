@@ -1,6 +1,6 @@
 import WindowWrapper from '@/hoc/WindowWrapper';
 import useWindowStore from '@/store/window';
-import WindowControls from '@components/WindowControls';
+import { WindowControls } from '@components';
 import { gallery, photosLinks } from '@constants/index';
 import { Mail, Search } from 'lucide-react';
 
@@ -11,7 +11,7 @@ const Photos = () => {
             <div id="window-header">
                 <WindowControls target="photos" />
 
-                <div className="flex w-full items-center justify-end gap-3 text-gray-500">
+                <div className="text-muted-foreground flex w-full items-center justify-end gap-3">
                     <Mail className="icon" />
                     <Search className="icon" />
                 </div>
