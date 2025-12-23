@@ -1,5 +1,5 @@
 import { socials } from '@constants/index';
-import WindowWrapper from '@/hoc/WindowWrapper';
+import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
 
 const Contact = () => {

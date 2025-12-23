@@ -1,4 +1,4 @@
-import WindowWrapper from '@/hoc/WindowWrapper';
+import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
 import { blogPosts } from '@constants/index';
 import { ChevronLeft, ChevronRight, Copy, MoveRight, PanelLeft, Plus, Search, Share, ShieldHalf } from 'lucide-react';

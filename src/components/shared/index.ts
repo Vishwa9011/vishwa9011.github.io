@@ -1,6 +1,6 @@
-import Dock from './Dock';
-import Navbar from './Navbar';
-import Welcome from './Welcome';
-import WindowControls from './WindowControls';
+import Dock from './dock';
+import Navbar from './navbar';
+import Welcome from './welcome';
+import WindowControls from './window-controls';
 
 export { Navbar, Welcome, Dock, WindowControls };

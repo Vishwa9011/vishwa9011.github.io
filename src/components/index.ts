@@ -1,4 +1,4 @@
-export { default as Dock } from './shared/Dock';
-export { default as Navbar } from './shared/Navbar';
-export { default as Welcome } from './shared/Welcome';
-export { default as WindowControls } from './shared/WindowControls';
+export { default as Dock } from './shared/dock';
+export { default as Navbar } from './shared/navbar';
+export { default as Welcome } from './shared/welcome';
+export { default as WindowControls } from './shared/window-controls';

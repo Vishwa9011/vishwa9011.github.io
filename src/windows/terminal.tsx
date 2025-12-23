@@ -1,4 +1,4 @@
-import WindowWrapper from '@/hoc/WindowWrapper';
+import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
 import { techStack } from '@constants/index';
 import { Check, Flag } from 'lucide-react';

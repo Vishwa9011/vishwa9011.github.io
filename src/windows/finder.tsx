@@ -1,4 +1,4 @@
-import WindowWrapper from '@/hoc/WindowWrapper';
+import WindowWrapper from '@/hoc/window-wrapper';
 import { cn } from '@/lib/utils';
 import useLocationStore from '@/store/location';
 import useWindowStore from '@/store/window';

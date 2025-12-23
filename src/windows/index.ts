@@ -1,11 +1,11 @@
-import Terminal from './Terminal';
-import Safari from './Safari';
-import Resume from './Resume';
-import Finder from './Finder';
-import Text from './Text';
-import Image from './Image';
-import Contact from './Contact';
-import Home from './Home';
-import Photos from './Photos';
+import Terminal from './terminal';
+import Safari from './safari';
+import Resume from './resume';
+import Finder from './finder';
+import Text from './text';
+import Image from './image';
+import Contact from './contact';
+import Home from './home';
+import Photos from './photos';
 
 export { Terminal, Safari, Resume, Finder, Text, Image, Contact, Home, Photos };

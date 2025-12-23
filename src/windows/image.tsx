@@ -1,4 +1,4 @@
-import WindowWrapper from '@/hoc/WindowWrapper';
+import WindowWrapper from '@/hoc/window-wrapper';
 import useWindowStore from '@/store/window';
 import type { LocationFile } from '@/types';
 import { WindowControls } from '@components';
