@@ -23,7 +23,7 @@ const Home = () => {
 
     return (
         <section id="home">
-            <ul>
+            <ul className="home-projects">
                 {projects.map(project => (
                     <li
                         key={project.id}
@@ -34,6 +34,15 @@ const Home = () => {
                         <p>{project.name}</p>
                     </li>
                 ))}
+            </ul>
+
+            <ul className="home-mobile">
+                <li key={'pages'} onClick={() => {}} className={cn('group folder')}>
+                    <img src={'/images/pages.png'} alt={'pages.png'} />
+                </li>
+                <li key={'terminal'} onClick={() => {}} className={cn('group folder size-[84px]')}>
+                    <img src={'/images/terminal.png'} alt={'pages.png'} />
+                </li>
             </ul>
         </section>
     );

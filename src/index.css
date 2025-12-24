@@ -41,7 +41,7 @@ body {
     }
 
     nav {
-        @apply bg-card/60 text-foreground flex items-center justify-between p-2 px-5 backdrop-blur-3xl select-none;
+        @apply bg-card/60 text-foreground hidden items-center justify-between p-2 px-5 backdrop-blur-3xl select-none sm:flex;
 
         div {
             @apply flex items-center gap-5 max-sm:w-full max-sm:justify-center;
@@ -91,7 +91,7 @@ body {
     }
 
     #dock {
-        @apply absolute bottom-5 left-1/2 z-50 -translate-x-1/2 select-none max-sm:hidden;
+        @apply absolute bottom-5 left-1/2 z-50 w-full -translate-x-1/2 px-5 select-none sm:w-auto sm:px-0;
 
         .dock-container {
             @apply bg-card/20 flex items-end justify-between gap-1.5 rounded-2xl p-1.5 backdrop-blur-md;
@@ -102,7 +102,7 @@ body {
         }
 
         .dock-icon {
-            @apply 3xl:size-20 size-14 cursor-pointer;
+            @apply size-full cursor-pointer sm:size-14;
 
             img {
                 @apply object-cover object-center;
@@ -389,9 +389,23 @@ body {
     }
 
     #home {
-        @apply relative z-0 max-sm:hidden;
+        @apply relative z-0;
 
-        ul {
+        .home-mobile {
+            @apply flex items-center gap-2 px-5 sm:hidden;
+
+            li {
+                @apply inline-flex size-20 items-center justify-center;
+
+                img {
+                    @apply w-full object-contain object-center;
+                }
+            }
+        }
+
+        .home-projects {
+            @apply hidden sm:block;
+
             li {
                 @apply absolute z-0 flex flex-col items-center select-none;
 

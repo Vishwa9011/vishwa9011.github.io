@@ -5,6 +5,7 @@ import { Tooltip } from 'react-tooltip';
 import { dockApps } from '@constants/index';
 import useWindowStore from '@/store/window';
 import type { WindowKey } from '@/types';
+import { useMobile } from '@/hooks/use-mobile';
 
 type ToggleAppParams = {
     id: string;
@@ -12,8 +13,11 @@ type ToggleAppParams = {
 };
 
 const Dock = () => {
+    const isMobile = useMobile();
     const { windows, closeWindow, openWindow } = useWindowStore();
     const dockRef = useRef<HTMLDivElement>(null);
+
+    const filteredDockApps = dockApps.filter(app => (isMobile ? app.mobileVisibility !== false : true));
 
     const toggleApp = (app: ToggleAppParams) => {
         if (!app.canOpen) return;
@@ -82,7 +86,7 @@ const Dock = () => {
     return (
         <section id="dock">
             <div ref={dockRef} className="dock-container">
-                {dockApps.map(({ id, name, icon, canOpen }) => (
+                {filteredDockApps.map(({ id, name, icon, canOpen }) => (
                     <div key={id} className="relative flex justify-center">
                         <button
                             type="button"

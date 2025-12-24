@@ -49,18 +49,21 @@ const dockApps = [
         id: 'finder',
         name: 'Portfolio', // was "Finder"
         icon: 'finder.png',
+        mobileVisibility: true,
         canOpen: true,
     },
     {
         id: 'safari',
         name: 'Articles', // was "Safari"
         icon: 'safari.png',
+        mobileVisibility: true,
         canOpen: true,
     },
     {
         id: 'photos',
         name: 'Gallery', // was "Photos"
         icon: 'photos.png',
+        mobileVisibility: true,
         canOpen: true,
     },
     {
@@ -68,17 +71,20 @@ const dockApps = [
         name: 'Contact', // or "Get in touch"
         icon: 'contact.png',
         canOpen: true,
+        mobileVisibility: true,
     },
     {
         id: 'terminal',
         name: 'Skills', // was "Terminal"
         icon: 'terminal.png',
         canOpen: true,
+        mobileVisibility: false,
     },
     {
         id: 'trash',
         name: 'Archive', // was "Trash"
         icon: 'trash.png',
+        mobileVisibility: false,
         canOpen: false,
     },
 ] as const;
