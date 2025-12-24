@@ -15,13 +15,16 @@ const ImageDesktop = () => {
 
     return (
         <>
-            <div id="window-header">
+            <div
+                id="window-header"
+                className="dark:border-surface-muted border-border bg-muted text-muted-foreground flex items-center justify-between rounded-t-lg border-b px-4 py-3 text-sm select-none"
+            >
                 <WindowControls target="imgfile" />
-                <p>{data.name}</p>
+                <p className="text-muted-foreground font-bold">{data.name}</p>
             </div>
 
-            <div className="preview">
-                <img src={imageSrc} alt={data.name} />
+            <div className="bg-muted max-h-[70vh] p-2">
+                <img src={imageSrc} alt={data.name} className="h-fit w-full object-contain object-center" />
             </div>
         </>
     );

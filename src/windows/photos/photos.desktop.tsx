@@ -8,7 +8,10 @@ const PhotosDesktop = () => {
     const { openWindow } = useWindowStore();
     return (
         <>
-            <div id="window-header">
+            <div
+                id="window-header"
+                className="dark:border-surface-muted border-border bg-muted text-muted-foreground flex items-center justify-between rounded-t-lg border-b px-4 py-3 text-sm select-none"
+            >
                 <WindowControls target="photos" />
 
                 <div className="text-muted-foreground flex w-full items-center justify-end gap-3">
@@ -18,23 +21,37 @@ const PhotosDesktop = () => {
             </div>
 
             <div className="flex w-full">
-                <div className="sidebar">
-                    <h2>Photos</h2>
+                <div className="border-border bg-muted flex w-3/12 flex-none flex-col border-r p-5">
+                    <h2 className="text-muted-foreground mb-1 text-xs font-medium">Photos</h2>
                     <ul>
                         {photosLinks.map(({ id, icon, title }) => (
-                            <li key={id}>
-                                <img src={icon} alt={title} />
-                                <p>{title}</p>
+                            <li
+                                key={id}
+                                className="first:bg-accent/20 first:text-accent flex cursor-pointer items-center gap-2 space-y-1 rounded-md px-3 py-2 transition-colors"
+                            >
+                                <img src={icon} alt={title} className="w-4" />
+                                <p className="text-sm font-medium">{title}</p>
                             </li>
                         ))}
                     </ul>
                 </div>
 
-                <div className="gallery">
-                    <ul>
-                        {gallery.map(({ id, img }) => (
+                <div className="p-5">
+                    <ul className="grid grid-cols-5 grid-rows-5 gap-2.5">
+                        {gallery.map(({ id, img }, index) => (
                             <li
                                 key={id}
+                                className={
+                                    index === 0
+                                        ? 'col-span-3 col-start-1 row-span-3 row-start-1'
+                                        : index === 1
+                                          ? 'col-span-2 col-start-4 row-span-3 row-start-1'
+                                          : index === 2
+                                            ? 'col-span-3 col-start-3 row-span-2 row-start-4'
+                                            : index === gallery.length - 1
+                                              ? 'col-span-2 col-start-1 row-span-2 row-start-4'
+                                              : undefined
+                                }
                                 onClick={() =>
                                     openWindow('imgfile', {
                                         id,
@@ -46,7 +63,11 @@ const PhotosDesktop = () => {
                                     })
                                 }
                             >
-                                <img src={img} alt={`Gallery image ${id}`} />
+                                <img
+                                    src={img}
+                                    alt={`Gallery image ${id}`}
+                                    className="size-full rounded-lg object-cover"
+                                />
                             </li>
                         ))}
                     </ul>

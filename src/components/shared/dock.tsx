@@ -84,13 +84,19 @@ const Dock = () => {
     }, []);
 
     return (
-        <section id="dock">
-            <div ref={dockRef} className="dock-container">
+        <section
+            id="dock"
+            className="absolute bottom-5 left-1/2 z-50 w-full -translate-x-1/2 px-5 select-none sm:w-auto sm:px-0"
+        >
+            <div
+                ref={dockRef}
+                className="bg-card/20 flex items-end justify-between gap-1.5 rounded-2xl p-1.5 backdrop-blur-md"
+            >
                 {filteredDockApps.map(({ id, name, icon, canOpen }) => (
                     <div key={id} className="relative flex justify-center">
                         <button
                             type="button"
-                            className="dock-icon"
+                            className="dock-icon size-full cursor-pointer sm:size-14"
                             aria-label={name}
                             data-tooltip-id="dock-tooltip"
                             data-tooltip-content={name}
@@ -102,13 +108,19 @@ const Dock = () => {
                                 src={`/images/${icon}`}
                                 alt={`icon-${name}`}
                                 loading="lazy"
-                                className={canOpen ? '' : 'opacity-60'}
+                                className={
+                                    canOpen ? 'object-cover object-center' : 'object-cover object-center opacity-60'
+                                }
                             />
                         </button>
                     </div>
                 ))}
 
-                <Tooltip id="dock-tooltip" place="top" className="tooltip" />
+                <Tooltip
+                    id="dock-tooltip"
+                    place="top"
+                    className="!bg-accent/80 !text-accent-foreground !w-fit !rounded-md !px-3 !py-1 !text-center !text-xs !shadow-2xl"
+                />
             </div>
         </section>
     );

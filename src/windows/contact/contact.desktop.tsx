@@ -5,15 +5,18 @@ import { WindowControls } from '@components';
 const ContactDesktop = () => {
     return (
         <>
-            <div id="window-header">
+            <div
+                id="window-header"
+                className="dark:border-surface-muted border-border bg-muted text-muted-foreground flex items-center justify-between rounded-t-lg border-b px-4 py-3 text-sm select-none"
+            >
                 <WindowControls target="contact" />
-                <h2>Contact Me</h2>
+                <h2 className="w-full text-center text-sm font-bold">Contact Me</h2>
             </div>
 
             <div className="space-y-5 p-5">
                 <img src="/images/adrian.jpg" alt="adrian" className="w-20 rounded-full" />
 
-                <h3>Let's Connect</h3>
+                <h3 className="text-xl font-semibold">Let's Connect</h3>
                 <p>Got an idea? A bug to squash? Or just wanna talk tech? I'm in.</p>
                 <p>
                     <a
@@ -25,12 +28,16 @@ const ContactDesktop = () => {
                         vishu842301@gmail.com
                     </a>
                 </p>
-                <ul>
+                <ul className="flex items-center gap-3">
                     {socials.map(({ id, bg, link, icon, text }) => (
-                        <li key={id} style={{ backgroundColor: bg }}>
-                            <a href={link} target="_blank" rel="noopener noreferrer">
+                        <li
+                            key={id}
+                            style={{ backgroundColor: bg }}
+                            className="w-60 origin-center rounded-lg p-3 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
+                        >
+                            <a href={link} target="_blank" rel="noopener noreferrer" className="space-y-5">
                                 <img src={icon} alt={text} />
-                                <p>{text}</p>
+                                <p className="text-sm font-semibold text-white">{text}</p>
                             </a>
                         </li>
                     ))}

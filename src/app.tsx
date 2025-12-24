@@ -8,7 +8,7 @@ gsap.registerPlugin(Draggable);
 
 const App = () => {
     return (
-        <main>
+        <main className="h-dvh w-dvw overflow-hidden">
             <Navbar />
             <Welcome />
             <Dock />

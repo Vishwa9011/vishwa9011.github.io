@@ -13,9 +13,12 @@ const TextDesktop = () => {
 
     return (
         <>
-            <div id="window-header">
+            <div
+                id="window-header"
+                className="dark:border-surface-muted border-border bg-muted text-muted-foreground flex items-center justify-between rounded-t-lg border-b px-4 py-3 text-sm select-none"
+            >
                 <WindowControls target="txtfile" />
-                <h2>{data.name}</h2>
+                <h2 className="w-full text-center text-sm font-bold">{data.name}</h2>
             </div>
 
             <div className="bg-card space-y-4 p-5">

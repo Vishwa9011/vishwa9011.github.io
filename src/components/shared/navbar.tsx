@@ -11,21 +11,21 @@ const Navbar = () => {
 
     return (
         <>
-            <nav>
-                <div className="">
+            <nav className="bg-card/60 text-foreground hidden items-center justify-between p-2 px-5 backdrop-blur-3xl select-none sm:flex">
+                <div className="flex items-center gap-5 max-sm:w-full max-sm:justify-center">
                     <img src="/images/logo.svg" alt="logo" className="dark:invert" />
                     <p className="font-bold">Vishwa's Portfolio</p>
-                    <ul>
+                    <ul className="text-foreground flex items-center gap-5 max-sm:hidden">
                         {navLinks.map(({ id, name, type }) => (
                             <li key={id} onClick={() => openWindow(type)}>
-                                <p>{name}</p>
+                                <p className="cursor-pointer text-sm transition-all hover:underline">{name}</p>
                             </li>
                         ))}
                     </ul>
                 </div>
 
-                <div className="">
-                    <ul className="">
+                <div className="flex items-center gap-5 max-sm:hidden">
+                    <ul className="text-foreground flex items-center gap-5 max-sm:hidden">
                         {otherIcons.map(({ id, img }) => (
                             <li key={id}>
                                 <img src={img} className="icon nav-icon" alt={`icon-${id}`} />
@@ -36,7 +36,7 @@ const Navbar = () => {
                             <ThemeDropdown iconSrc={'/icons/mode.svg'} />
                         </li>
                     </ul>
-                    <time>{dayjs().format('ddd MMM D h:mm A')}</time>
+                    <time className="text-foreground text-sm font-medium">{dayjs().format('ddd MMM D h:mm A')}</time>
                 </div>
             </nav>
 

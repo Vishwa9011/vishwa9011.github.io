@@ -37,13 +37,16 @@ const FinderDesktop = () => {
     const renderList = (name: string, locations: Location[]) => {
         return (
             <div>
-                <h3>{name}</h3>
-                <ul>
+                <h3 className="text-muted-foreground mb-1 text-xs font-medium">{name}</h3>
+                <ul className="space-y-1">
                     {locations.map(location => (
                         <li
                             key={location.id}
                             onClick={() => setActiveLocation(location)}
-                            className={cn(location.id === activeLocation.id ? 'active' : 'non-active')}
+                            className={cn(
+                                'flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 transition-colors',
+                                location.id === activeLocation.id ? 'bg-accent/20 text-accent' : null,
+                            )}
                         >
                             <img src={location.icon} alt={location.name} className="w-4" />
                             <p className="truncate text-sm font-medium">{location.name}</p>
@@ -56,21 +59,32 @@ const FinderDesktop = () => {
 
     return (
         <>
-            <div id="window-header">
+            <div
+                id="window-header"
+                className="dark:border-surface-muted border-border bg-muted text-muted-foreground flex items-center justify-between rounded-t-lg border-b px-4 py-3 text-sm select-none"
+            >
                 <WindowControls target="finder" />
                 <Search className="icon" />
             </div>
 
             <div className="flex h-full">
-                <div className="sidebar">
+                <div className="border-border bg-muted flex w-48 flex-col space-y-3 border-r p-5">
                     {renderList('Favorites', Object.values(locations))}
                     {renderList('My Projects', locations.work.children)}
                 </div>
-                <ul className="content">
+                <ul className="bg-card relative max-w-2xl flex-1 p-8">
                     {('children' in activeLocation ? activeLocation.children : []).map(item => (
-                        <li key={item.id} className={item.position} onClick={() => openItem(item)}>
-                            <img src={item.icon} alt={item.name} className="w-8" />
-                            <p>{item.name}</p>
+                        <li
+                            key={item.id}
+                            className={cn('absolute flex flex-col items-center gap-3', item.position)}
+                            onClick={() => openItem(item)}
+                        >
+                            <img
+                                src={item.icon}
+                                alt={item.name}
+                                className="relative size-16 object-contain object-center group-hover:scale-105"
+                            />
+                            <p className="w-40 text-center text-sm font-medium">{item.name}</p>
                         </li>
                     ))}
                 </ul>

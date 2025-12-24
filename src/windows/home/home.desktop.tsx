@@ -22,26 +22,47 @@ const Home = () => {
     }, []);
 
     return (
-        <section id="home">
-            <ul className="home-projects">
+        <section id="home" className="relative z-0">
+            <ul className="hidden sm:block">
                 {projects.map(project => (
                     <li
                         key={project.id}
                         onClick={() => handleOpenProjectFinder(project)}
-                        className={cn('group folder', project.windowPosition)}
+                        className={cn(
+                            'group folder absolute z-0 flex flex-col items-center select-none',
+                            project.windowPosition,
+                        )}
                     >
-                        <img src={project.icon} alt={project.name} />
-                        <p>{project.name}</p>
+                        <img
+                            src={project.icon}
+                            alt={project.name}
+                            className="group-hover:bg-foreground/10 rounded-md p-1"
+                        />
+                        <p className="group-hover:bg-accent max-w-40 rounded-md px-1 text-center text-sm text-white transition-colors">
+                            {project.name}
+                        </p>
                     </li>
                 ))}
             </ul>
 
-            <ul className="home-mobile">
-                <li key={'pages'} onClick={() => openWindow('resume')} className={cn('group folder')}>
-                    <img src={'/images/pages.png'} alt={'pages.png'} />
+            <ul className="flex items-center gap-2 px-5 sm:hidden">
+                <li
+                    key={'pages'}
+                    onClick={() => openWindow('resume')}
+                    className={cn('group folder inline-flex size-20 items-center justify-center')}
+                >
+                    <img src={'/images/pages.png'} alt={'pages.png'} className="w-full object-contain object-center" />
                 </li>
-                <li key={'terminal'} onClick={() => openWindow('terminal')} className={cn('group folder size-[84px]')}>
-                    <img src={'/images/terminal.png'} alt={'pages.png'} />
+                <li
+                    key={'terminal'}
+                    onClick={() => openWindow('terminal')}
+                    className={cn('group folder inline-flex size-[84px] items-center justify-center')}
+                >
+                    <img
+                        src={'/images/terminal.png'}
+                        alt={'pages.png'}
+                        className="w-full object-contain object-center"
+                    />
                 </li>
             </ul>
         </section>

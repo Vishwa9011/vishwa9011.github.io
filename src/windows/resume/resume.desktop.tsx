@@ -11,9 +11,12 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.m
 const ResumeDesktop = () => {
     return (
         <>
-            <div id="window-header">
+            <div
+                id="window-header"
+                className="dark:border-surface-muted border-border bg-muted text-muted-foreground flex items-center justify-between rounded-t-lg border-b px-4 py-3 text-sm select-none"
+            >
                 <WindowControls target="resume" />
-                <h2>Resume.pdf</h2>
+                <h2 className="flex-1 text-center text-sm font-bold">Resume.pdf</h2>
                 <a href="files/resume.pdf" download className="cursor-pointer" title="Download resume">
                     <Download className="icon" />
                 </a>
