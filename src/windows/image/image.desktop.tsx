@@ -27,6 +27,6 @@ const Image = () => {
     );
 };
 
-const ImageWindow = WindowWrapper(Image, 'imgfile');
+const ImageDesktopWindow = WindowWrapper(Image, 'imgfile');
 
-export default ImageWindow;
+export { ImageDesktopWindow };

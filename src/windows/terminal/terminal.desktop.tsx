@@ -3,7 +3,7 @@ import { WindowControls } from '@components';
 import { techStack } from '@constants/index';
 import { Check, Flag } from 'lucide-react';
 
-const Terminal = () => {
+const TerminalDesktop = () => {
     return (
         <>
             <div id="window-header">
@@ -13,7 +13,7 @@ const Terminal = () => {
 
             <div className="techstack">
                 <p>
-                    <span className="font-bold">@vishwa %</span>
+                    <span className="font-bold">@vishwa % </span>
                     show tech stack
                 </p>
 
@@ -52,6 +52,6 @@ const Terminal = () => {
     );
 };
 
-const TerminalWindow = WindowWrapper(Terminal, 'terminal');
+const TerminalDesktopWrapped = WindowWrapper(TerminalDesktop, 'terminal');
 
-export default TerminalWindow;
+export { TerminalDesktopWrapped };

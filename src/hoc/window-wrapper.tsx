@@ -6,9 +6,11 @@ import useWindowStore from '@/store/window';
 
 import { Draggable } from 'gsap/Draggable';
 import { useLayoutEffect, useRef } from 'react';
+import { useMobile } from '@/hooks/use-mobile';
 
 const WindowWrapper = (Component: any, windowKey: WindowKey) => {
     const Wrapped = (props: any) => {
+        const isMobile = useMobile();
         const { windows, focusWindow } = useWindowStore();
         const { isOpen, zIndex } = windows[windowKey];
         const ref = useRef<HTMLDivElement>(null);
@@ -44,6 +46,10 @@ const WindowWrapper = (Component: any, windowKey: WindowKey) => {
 
             el.style.display = isOpen ? 'block' : 'none';
         }, [isOpen]);
+
+        if (isMobile) {
+            return null;
+        }
 
         return (
             <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">

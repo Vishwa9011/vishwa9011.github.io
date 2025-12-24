@@ -464,6 +464,8 @@ body {
     --color-warning: var(--warning);
     --color-brand: var(--brand);
     --color-brand-foreground: var(--brand-foreground);
+
+    --spacing-nav-height: 3rem;
 }
 
 :root {

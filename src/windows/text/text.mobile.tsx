@@ -1,10 +1,10 @@
-import WindowWrapper from '@/hoc/window-wrapper';
+import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import useWindowStore from '@/store/window';
 import type { LocationFile } from '@/types';
-import { WindowControls } from '@components';
+import { MobileWindowHeader } from '@components/shared/mobile-window-header';
 
-const Text = () => {
-    const { windows } = useWindowStore();
+const TextMobile = () => {
+    const { windows, closeWindow } = useWindowStore();
     const data = windows.txtfile.data as LocationFile | null;
 
     if (!data || data.kind !== 'file') return null;
@@ -13,11 +13,7 @@ const Text = () => {
 
     return (
         <>
-            <div id="window-header">
-                <WindowControls target="txtfile" />
-                <h2>{data.name}</h2>
-            </div>
-
+            <MobileWindowHeader title={data.name} onClose={() => closeWindow('txtfile')} />
             <div className="bg-card space-y-4 p-5">
                 {imageSrc && (
                     <div className="overflow-hidden rounded-lg">
@@ -28,7 +24,7 @@ const Text = () => {
                 {data.subtitle && <h3 className="text-foreground text-lg font-semibold">{data.subtitle}</h3>}
 
                 {data.description?.map((paragraph, index) => (
-                    <p key={index} className="text-muted-foreground text-sm leading-relaxed">
+                    <p key={index} className="text-foreground text-base leading-relaxed sm:text-sm">
                         {paragraph}
                     </p>
                 ))}
@@ -37,6 +33,6 @@ const Text = () => {
     );
 };
 
-const TextWindow = WindowWrapper(Text, 'txtfile');
+const TextMobileWrapped = MobileWindowWrapper(TextMobile, 'txtfile');
 
-export default TextWindow;
+export { TextMobileWrapped };

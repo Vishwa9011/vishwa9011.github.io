@@ -38,7 +38,7 @@ const Photos = () => {
                                 onClick={() =>
                                     openWindow('imgfile', {
                                         id,
-                                        name: 'Galler image',
+                                        name: 'Gallery image',
                                         icon: '/images/image.png',
                                         kind: 'file',
                                         fileType: 'img',
@@ -56,6 +56,6 @@ const Photos = () => {
     );
 };
 
-const PhotosWindow = WindowWrapper(Photos, 'photos');
+const PhotosDesktopWindow = WindowWrapper(Photos, 'photos');
 
-export default PhotosWindow;
+export { PhotosDesktopWindow };

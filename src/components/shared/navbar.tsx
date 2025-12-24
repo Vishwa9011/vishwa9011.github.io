@@ -1,8 +1,9 @@
 import dayjs from 'dayjs';
-import { navIcons, navLinks } from '@constants';
+import { cn } from '@/lib/utils';
 import useWindowStore from '@/store/window';
 import ThemeDropdown from './theme-dropdown';
 import { Battery, Wifi } from 'lucide-react';
+import { navIcons, navLinks } from '@constants';
 
 const Navbar = () => {
     const { openWindow } = useWindowStore();
@@ -23,7 +24,7 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <div>
+                <div className="">
                     <ul className="">
                         {otherIcons.map(({ id, img }) => (
                             <li key={id}>
@@ -47,17 +48,23 @@ const Navbar = () => {
 export default Navbar;
 
 function MobileNavbar() {
+    const { nextZIndex } = useWindowStore();
     return (
-        <section className="flex justify-between gap-5 px-5 py-3 text-white sm:hidden">
+        <section
+            className={cn(
+                'h-nav-height relative flex items-center justify-between gap-5 px-5 py-3 text-white sm:hidden',
+            )}
+            style={{ zIndex: nextZIndex }}
+        >
             <p>{dayjs().format('h:mm A')}</p>
 
             <div className="mx-auto h-6 w-40 rounded-full bg-black"></div>
             <ul className="flex items-center gap-2">
                 <li>
-                    <Wifi className="icon nav-icon" />
+                    <Wifi className="size-4" />
                 </li>
                 <li>
-                    <Battery className="icon nav-icon" />
+                    <Battery className="size-4" />
                 </li>
             </ul>
         </section>

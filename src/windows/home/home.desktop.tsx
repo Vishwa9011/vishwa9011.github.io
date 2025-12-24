@@ -37,10 +37,10 @@ const Home = () => {
             </ul>
 
             <ul className="home-mobile">
-                <li key={'pages'} onClick={() => {}} className={cn('group folder')}>
+                <li key={'pages'} onClick={() => openWindow('resume')} className={cn('group folder')}>
                     <img src={'/images/pages.png'} alt={'pages.png'} />
                 </li>
-                <li key={'terminal'} onClick={() => {}} className={cn('group folder size-[84px]')}>
+                <li key={'terminal'} onClick={() => openWindow('terminal')} className={cn('group folder size-[84px]')}>
                     <img src={'/images/terminal.png'} alt={'pages.png'} />
                 </li>
             </ul>

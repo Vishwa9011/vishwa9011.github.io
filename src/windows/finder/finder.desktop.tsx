@@ -72,6 +72,6 @@ const Finder = () => {
     );
 };
 
-const FinderWindow = WindowWrapper(Finder, 'finder');
+const FinderDesktopWindow = WindowWrapper(Finder, 'finder');
 
-export default FinderWindow;
+export { FinderDesktopWindow };
