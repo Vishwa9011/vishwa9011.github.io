@@ -1,7 +1,7 @@
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import useWindowStore from '@/store/window';
 import { MobileWindowHeader } from '@components/shared/mobile-window-header';
-import { techStack } from '@constants/index';
+import { techStack } from '@constants';
 import { Check, ChevronRight, Flag } from 'lucide-react';
 
 const TerminalMobile = () => {
@@ -49,6 +49,6 @@ const TerminalMobile = () => {
     );
 };
 
-const TerminalMobileWrapped = MobileWindowWrapper(TerminalMobile, 'terminal');
+const TerminalMobileWindow = MobileWindowWrapper(TerminalMobile, 'terminal');
 
-export { TerminalMobileWrapped };
+export { TerminalMobileWindow };

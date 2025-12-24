@@ -3,7 +3,7 @@ import useWindowStore from '@/store/window';
 import type { LocationFile } from '@/types';
 import { WindowControls } from '@components';
 
-const Image = () => {
+const ImageDesktop = () => {
     const { windows } = useWindowStore();
     const data = windows.imgfile.data as LocationFile | null;
 
@@ -27,6 +27,6 @@ const Image = () => {
     );
 };
 
-const ImageDesktopWindow = WindowWrapper(Image, 'imgfile');
+const ImageDesktopWindow = WindowWrapper(ImageDesktop, 'imgfile');
 
 export { ImageDesktopWindow };

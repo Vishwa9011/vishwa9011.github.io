@@ -18,6 +18,6 @@ const ResumeMobile = () => {
     );
 };
 
-const ResumeMobileWrapped = MobileWindowWrapper(ResumeMobile, 'resume');
+const ResumeMobileWindow = MobileWindowWrapper(ResumeMobile, 'resume');
 
-export { ResumeMobileWrapped };
+export { ResumeMobileWindow };

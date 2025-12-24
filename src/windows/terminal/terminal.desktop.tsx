@@ -1,6 +1,6 @@
 import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
-import { techStack } from '@constants/index';
+import { techStack } from '@constants';
 import { Check, Flag } from 'lucide-react';
 
 const TerminalDesktop = () => {
@@ -52,6 +52,6 @@ const TerminalDesktop = () => {
     );
 };
 
-const TerminalDesktopWrapped = WindowWrapper(TerminalDesktop, 'terminal');
+const TerminalDesktopWindow = WindowWrapper(TerminalDesktop, 'terminal');
 
-export { TerminalDesktopWrapped };
+export { TerminalDesktopWindow };

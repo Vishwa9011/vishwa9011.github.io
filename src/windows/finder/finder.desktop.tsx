@@ -2,29 +2,36 @@ import WindowWrapper from '@/hoc/window-wrapper';
 import { cn } from '@/lib/utils';
 import useLocationStore from '@/store/location';
 import useWindowStore from '@/store/window';
-import type { Location, LocationFolder } from '@/types';
+import type { Location } from '@/types';
 import { WindowControls } from '@components';
 import { locations } from '@constants';
 import { Search } from 'lucide-react';
+import { windowKeyForFileType } from './window-key';
 
-const Finder = () => {
+const FinderDesktop = () => {
     const { openWindow } = useWindowStore();
     const { setActiveLocation, activeLocation } = useLocationStore();
 
     const openItem = (item: Location) => {
         if (item.kind === 'file' && item.fileType === 'pdf') {
             openWindow('resume');
+            return;
         }
 
-        if (item.kind === 'folder') setActiveLocation(item);
-        if (item.kind === 'file' && ['fig', 'url'].includes(item.fileType)) {
-            window.open(item.href, '_blank');
+        if (item.kind === 'folder') {
+            setActiveLocation(item);
+            return;
         }
 
-        if (item.kind === 'file') {
-            // TODO: fix type assertion
-            openWindow(`${item.fileType}${item.kind}` as any, item);
+        if (item.kind !== 'file') return;
+
+        if (item.fileType === 'fig' || item.fileType === 'url') {
+            if (item.href) window.open(item.href, '_blank', 'noopener,noreferrer');
+            return;
         }
+
+        const windowKey = windowKeyForFileType(item.fileType);
+        if (windowKey) openWindow(windowKey, item);
     };
 
     const renderList = (name: string, locations: Location[]) => {
@@ -60,7 +67,7 @@ const Finder = () => {
                     {renderList('My Projects', locations.work.children)}
                 </div>
                 <ul className="content">
-                    {(activeLocation as LocationFolder).children.map(item => (
+                    {('children' in activeLocation ? activeLocation.children : []).map(item => (
                         <li key={item.id} className={item.position} onClick={() => openItem(item)}>
                             <img src={item.icon} alt={item.name} className="w-8" />
                             <p>{item.name}</p>
@@ -72,6 +79,6 @@ const Finder = () => {
     );
 };
 
-const FinderDesktopWindow = WindowWrapper(Finder, 'finder');
+const FinderDesktopWindow = WindowWrapper(FinderDesktop, 'finder');
 
 export { FinderDesktopWindow };

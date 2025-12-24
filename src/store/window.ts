@@ -1,13 +1,13 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-import { INITIAL_Z_INDEX, WINDOW_CONFIG } from '@constants/index';
+import { INITIAL_Z_INDEX, WINDOW_CONFIG } from '@constants';
 
 import type { WindowConfig, WindowKey } from '@/types';
 
 type WindowStoreState = {
     windows: WindowConfig;
     nextZIndex: number;
-    openWindow: (windowKey: WindowKey, data?: any) => void;
+    openWindow: (windowKey: WindowKey, data?: unknown) => void;
     closeWindow: (windowKey: WindowKey) => void;
     focusWindow: (windowKey: WindowKey) => void;
 };

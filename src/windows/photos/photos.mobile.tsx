@@ -1,4 +1,4 @@
-import { gallery } from '@constants/index';
+import { gallery } from '@constants';
 import useWindowStore from '@/store/window';
 import { MobileWindowHeader } from '@components/shared/mobile-window-header';
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
@@ -38,6 +38,6 @@ const PhotosMobile = () => {
     );
 };
 
-const PhotosMobileWrapped = MobileWindowWrapper(PhotosMobile, 'photos');
+const PhotosMobileWindow = MobileWindowWrapper(PhotosMobile, 'photos');
 
-export { PhotosMobileWrapped };
+export { PhotosMobileWindow };

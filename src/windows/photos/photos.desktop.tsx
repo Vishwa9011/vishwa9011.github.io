@@ -1,10 +1,10 @@
 import WindowWrapper from '@/hoc/window-wrapper';
 import useWindowStore from '@/store/window';
 import { WindowControls } from '@components';
-import { gallery, photosLinks } from '@constants/index';
+import { gallery, photosLinks } from '@constants';
 import { Mail, Search } from 'lucide-react';
 
-const Photos = () => {
+const PhotosDesktop = () => {
     const { openWindow } = useWindowStore();
     return (
         <>
@@ -56,6 +56,6 @@ const Photos = () => {
     );
 };
 
-const PhotosDesktopWindow = WindowWrapper(Photos, 'photos');
+const PhotosDesktopWindow = WindowWrapper(PhotosDesktop, 'photos');
 
 export { PhotosDesktopWindow };

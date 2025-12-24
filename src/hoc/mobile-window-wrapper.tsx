@@ -1,8 +1,11 @@
 import useWindowStore from '@/store/window';
 import type { WindowKey } from '@/types';
+import type { ComponentType } from 'react';
 
-export function MobileWindowWrapper(Component: any, windowKey: WindowKey) {
-    const Wrapped = (props: any) => {
+type NamedComponent = { displayName?: string; name?: string };
+
+export function MobileWindowWrapper<Props extends object>(Component: ComponentType<Props>, windowKey: WindowKey) {
+    const Wrapped = (props: Props) => {
         const { windows } = useWindowStore();
         const { isOpen, zIndex } = windows[windowKey];
 
@@ -21,7 +24,9 @@ export function MobileWindowWrapper(Component: any, windowKey: WindowKey) {
         );
     };
 
-    Wrapped.displayName = `MobileWindowWrapper(${Component.displayName || Component.name || 'Component'})`;
+    const componentName =
+        (Component as NamedComponent).displayName ?? (Component as NamedComponent).name ?? 'Component';
+    Wrapped.displayName = `MobileWindowWrapper(${componentName})`;
 
     return Wrapped;
 }

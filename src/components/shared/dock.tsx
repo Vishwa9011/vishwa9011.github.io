@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { Tooltip } from 'react-tooltip';
-import { dockApps } from '@constants/index';
+import { dockApps } from '@constants';
 import useWindowStore from '@/store/window';
 import type { WindowKey } from '@/types';
 import { useMobile } from '@/hooks/use-mobile';
@@ -66,14 +66,14 @@ const Dock = () => {
         };
 
         const resetIcons = () => {
-            icons.forEach(icon =>
+            icons.forEach(icon => {
                 gsap.to(icon, {
                     scale: 1,
                     y: 0,
                     duration: 0.3,
                     ease: 'power2.out',
-                }),
-            );
+                });
+            });
         };
         dock.addEventListener('mousemove', handleMouseMove);
         dock.addEventListener('mouseleave', resetIcons);

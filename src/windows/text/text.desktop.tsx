@@ -3,7 +3,7 @@ import useWindowStore from '@/store/window';
 import type { LocationFile } from '@/types';
 import { WindowControls } from '@components';
 
-const Text = () => {
+const TextDesktop = () => {
     const { windows } = useWindowStore();
     const data = windows.txtfile.data as LocationFile | null;
 
@@ -37,6 +37,6 @@ const Text = () => {
     );
 };
 
-const TextDesktopWindow = WindowWrapper(Text, 'txtfile');
+const TextDesktopWindow = WindowWrapper(TextDesktop, 'txtfile');
 
 export { TextDesktopWindow };

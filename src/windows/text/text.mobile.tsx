@@ -33,6 +33,6 @@ const TextMobile = () => {
     );
 };
 
-const TextMobileWrapped = MobileWindowWrapper(TextMobile, 'txtfile');
+const TextMobileWindow = MobileWindowWrapper(TextMobile, 'txtfile');
 
-export { TextMobileWrapped };
+export { TextMobileWindow };

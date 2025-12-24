@@ -41,7 +41,9 @@ const setupTextHover = (container: HTMLElement, type: TextType) => {
         });
     };
     const handleMouseLeave = () => {
-        letters.forEach(letter => animateLetter(letter, base));
+        letters.forEach(letter => {
+            animateLetter(letter, base);
+        });
     };
 
     container.addEventListener('mousemove', handleMouseMove);

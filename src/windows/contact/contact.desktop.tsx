@@ -1,8 +1,8 @@
-import { socials } from '@constants/index';
+import { socials } from '@constants';
 import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
 
-const Contact = () => {
+const ContactDesktop = () => {
     return (
         <>
             <div id="window-header">
@@ -40,6 +40,6 @@ const Contact = () => {
     );
 };
 
-const ContactDesktopWindow = WindowWrapper(Contact, 'contact');
+const ContactDesktopWindow = WindowWrapper(ContactDesktop, 'contact');
 
 export { ContactDesktopWindow };

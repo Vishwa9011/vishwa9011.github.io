@@ -5,11 +5,14 @@ import type { WindowKey } from '@/types';
 import useWindowStore from '@/store/window';
 
 import { Draggable } from 'gsap/Draggable';
+import type { ComponentType } from 'react';
 import { useLayoutEffect, useRef } from 'react';
 import { useMobile } from '@/hooks/use-mobile';
 
-const WindowWrapper = (Component: any, windowKey: WindowKey) => {
-    const Wrapped = (props: any) => {
+type NamedComponent = { displayName?: string; name?: string };
+
+const WindowWrapper = <Props extends object>(Component: ComponentType<Props>, windowKey: WindowKey) => {
+    const Wrapped = (props: Props) => {
         const isMobile = useMobile();
         const { windows, focusWindow } = useWindowStore();
         const { isOpen, zIndex } = windows[windowKey];
@@ -58,7 +61,9 @@ const WindowWrapper = (Component: any, windowKey: WindowKey) => {
         );
     };
 
-    Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || 'Component'})`;
+    const componentName =
+        (Component as NamedComponent).displayName ?? (Component as NamedComponent).name ?? 'Component';
+    Wrapped.displayName = `WindowWrapper(${componentName})`;
     return Wrapped;
 };
 

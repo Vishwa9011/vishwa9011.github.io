@@ -1,9 +1,9 @@
 import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
-import { blogPosts } from '@constants/index';
+import { blogPosts } from '@constants';
 import { ChevronLeft, ChevronRight, Copy, MoveRight, PanelLeft, Plus, Search, Share, ShieldHalf } from 'lucide-react';
 
-const Safari = () => {
+const SafariDesktop = () => {
     return (
         <>
             <div id="window-header">
@@ -57,6 +57,6 @@ const Safari = () => {
     );
 };
 
-const SafariDesktopWindow = WindowWrapper(Safari, 'safari');
+const SafariDesktopWindow = WindowWrapper(SafariDesktop, 'safari');
 
 export { SafariDesktopWindow };

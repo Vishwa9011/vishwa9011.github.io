@@ -1,7 +1,7 @@
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import useWindowStore from '@/store/window';
 import { MobileWindowHeader } from '@components/shared/mobile-window-header';
-import { socials } from '@constants/index';
+import { socials } from '@constants';
 
 const ContactMobile = () => {
     const { closeWindow } = useWindowStore();
@@ -43,6 +43,6 @@ const ContactMobile = () => {
     );
 };
 
-const ContactMobileWrapped = MobileWindowWrapper(ContactMobile, 'contact');
+const ContactMobileWindow = MobileWindowWrapper(ContactMobile, 'contact');
 
-export { ContactMobileWrapped };
+export { ContactMobileWindow };

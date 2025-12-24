@@ -1,7 +1,7 @@
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import useWindowStore from '@/store/window';
 import { MobileWindowHeader } from '@components/shared/mobile-window-header';
-import { blogPosts } from '@constants/index';
+import { blogPosts } from '@constants';
 import { BookOpen, ChevronLeft, ChevronRight, Copy, Mic, MoveRight, Search, Share } from 'lucide-react';
 
 const SafariMobile = () => {
@@ -58,6 +58,6 @@ const SafariMobile = () => {
     );
 };
 
-const SafariMobileWrapped = MobileWindowWrapper(SafariMobile, 'safari');
+const SafariMobileWindow = MobileWindowWrapper(SafariMobile, 'safari');
 
-export { SafariMobileWrapped };
+export { SafariMobileWindow };

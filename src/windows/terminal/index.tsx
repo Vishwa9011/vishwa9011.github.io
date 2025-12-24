@@ -1,9 +1,9 @@
 import { useMobile } from '@/hooks/use-mobile';
-import { TerminalDesktopWrapped } from './terminal.desktop';
-import { TerminalMobileWrapped } from './terminal.mobile';
+import { TerminalDesktopWindow } from './terminal.desktop';
+import { TerminalMobileWindow } from './terminal.mobile';
 
 export default function Terminal() {
     const isMobile = useMobile();
 
-    return isMobile ? <TerminalMobileWrapped /> : <TerminalDesktopWrapped />;
+    return isMobile ? <TerminalMobileWindow /> : <TerminalDesktopWindow />;
 }

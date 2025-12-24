@@ -1,19 +1,14 @@
 import useWindowStore from '@/store/window';
-import type { Location, WindowKey } from '@/types';
+import type { Location } from '@/types';
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import { MobileWindowHeader } from '@components/shared/mobile-window-header';
 import { locations } from '@constants';
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { windowKeyForFileType } from './window-key';
 
 type FolderLocation = Extract<Location, { kind: 'folder' }>;
-
-const windowKeyForFileType = (fileType: string): WindowKey | null => {
-    if (fileType === 'txt') return 'txtfile';
-    if (fileType === 'img') return 'imgfile';
-    return null;
-};
 
 const FinderMobile = () => {
     const [activeLocation, setActiveLocation] = useState<FolderLocation | null>(null);
@@ -118,6 +113,6 @@ const FinderMobile = () => {
     );
 };
 
-const FinderMobileWrapped = MobileWindowWrapper(FinderMobile, 'finder');
+const FinderMobileWindow = MobileWindowWrapper(FinderMobile, 'finder');
 
-export { FinderMobileWrapped };
+export { FinderMobileWindow };

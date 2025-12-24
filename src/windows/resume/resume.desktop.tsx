@@ -8,7 +8,7 @@ import 'react-pdf/dist/Page/TextLayer.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
 
-const Resume = () => {
+const ResumeDesktop = () => {
     return (
         <>
             <div id="window-header">
@@ -26,6 +26,6 @@ const Resume = () => {
     );
 };
 
-const ResumeDesktopWindow = WindowWrapper(Resume, 'resume');
+const ResumeDesktopWindow = WindowWrapper(ResumeDesktop, 'resume');
 
 export { ResumeDesktopWindow };
