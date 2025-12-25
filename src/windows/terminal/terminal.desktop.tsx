@@ -1,7 +1,7 @@
-import WindowWrapper from '@/hoc/window-wrapper';
-import { WindowControls } from '@components';
-import { techStack } from '@constants';
 import { Check, Flag } from 'lucide-react';
+import { WindowControls } from '@components';
+import WindowWrapper from '@/hoc/window-wrapper';
+import { portfolioIdentity, techStack } from '@constants';
 
 const TerminalDesktop = () => {
     return (
@@ -16,7 +16,7 @@ const TerminalDesktop = () => {
 
             <div className="font-roboto p-5 text-sm">
                 <p>
-                    <span className="font-bold">@vishwa % </span>
+                    <span className="font-bold">@{portfolioIdentity.terminalHandle} % </span>
                     show tech stack
                 </p>
 

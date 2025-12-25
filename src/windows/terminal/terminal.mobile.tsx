@@ -1,8 +1,8 @@
-import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import useWindowStore from '@/store/window';
-import { MobileWindowHeader } from '@components/shared/mobile-window-header';
-import { techStack } from '@constants';
 import { Check, ChevronRight, Flag } from 'lucide-react';
+import { portfolioIdentity, techStack } from '@constants';
+import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
+import { MobileWindowHeader } from '@components/shared/mobile-window-header';
 
 const TerminalMobile = () => {
     const { closeWindow } = useWindowStore();
@@ -11,7 +11,7 @@ const TerminalMobile = () => {
             <MobileWindowHeader onClose={() => closeWindow('terminal')} title="Tech Stack" />
             <div className="font-roboto overflow-x-hidden overflow-y-auto p-5">
                 <p>
-                    <span className="font-bold">@vishwa % </span>
+                    <span className="font-bold">@{portfolioIdentity.terminalHandle} % </span>
                     show tech stack
                 </p>
 

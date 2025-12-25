@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
+import { portfolioIdentity } from '@constants/index';
 
 const FONT_WEIGHTS = {
     subtitle: { min: 100, max: 400, default: 100 },
@@ -73,9 +74,13 @@ const Welcome = () => {
             id="welcome"
             className="abs-center flex flex-col items-center justify-center text-white select-none max-sm:h-screen max-sm:w-full max-sm:px-10"
         >
-            <h1 className="sr-only">Vishwa Vivek yadav</h1>
-            <p ref={subtitleRef}>
-                {renderText("Hey, I'm Vishwa Vivek! Welcome to my", 'text-2xl sm:text-3xl font-georama', 100)}
+            <h1 className="sr-only">{portfolioIdentity.fullName}</h1>
+            <p ref={subtitleRef} className="mb-3">
+                {renderText(
+                    `Hey, I'm! ${portfolioIdentity.firstName} Welcome to my`,
+                    'text-2xl sm:text-3xl font-georama',
+                    100,
+                )}
             </p>
             <h2 ref={titleRef}>{renderText('portfolio', 'sm:text-9xl text-7xl italic font-georama', 400)}</h2>
         </section>

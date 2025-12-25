@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import useWindowStore from '@/store/window';
 import ThemeDropdown from './theme-dropdown';
 import { Battery, Wifi } from 'lucide-react';
-import { navIcons, navLinks } from '@constants';
+import { navIcons, navLinks, portfolioIdentity } from '@constants';
 
 const Navbar = () => {
     const { openWindow } = useWindowStore();
@@ -15,7 +15,7 @@ const Navbar = () => {
                 <div className="flex items-center gap-5 max-sm:w-full max-sm:justify-center">
                     <div className="flex cursor-pointer items-center gap-3">
                         <img src="/images/logo.svg" alt="logo" className="dark:invert" />
-                        <p className="font-bold">Vishwa Vivek Yadav</p>
+                        <p className="font-bold">{portfolioIdentity.fullName}</p>
                     </div>
                     <ul className="text-foreground flex items-center gap-5 max-sm:hidden">
                         {navLinks.map(({ id, name, type }) => (
@@ -50,11 +50,16 @@ const Navbar = () => {
 export default Navbar;
 
 function MobileNavbar() {
-    const { nextZIndex } = useWindowStore();
+    const { nextZIndex, windows } = useWindowStore();
+
+    // it checks if any window is open
+    const isAnyWindowOpen = Object.values(windows).some(win => win.isOpen);
+
     return (
         <section
             className={cn(
-                'h-nav-height relative flex items-center justify-between gap-5 px-5 py-3 text-white sm:hidden',
+                'text-foreground h-nav-height relative flex items-center justify-between gap-5 px-5 py-3 backdrop-blur-sm sm:hidden dark:bg-transparent',
+                !isAnyWindowOpen && 'text-white', // this will make sure that text is visible when no window is open
             )}
             style={{ zIndex: nextZIndex }}
         >

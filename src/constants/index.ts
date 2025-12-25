@@ -1,5 +1,12 @@
 import type { Location, LocationsMap, WindowConfig } from '@/types';
 
+export const portfolioIdentity = {
+    fullName: 'Vishwa Vivek Yadav',
+    firstName: 'Vishwa Vivek',
+    lastName: 'Yadav',
+    terminalHandle: 'vishwavivek',
+} as const;
+
 type NavIcon = {
     id: number;
     img: string;
