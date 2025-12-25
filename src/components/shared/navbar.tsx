@@ -13,8 +13,10 @@ const Navbar = () => {
         <>
             <nav className="bg-card/60 text-foreground hidden items-center justify-between p-2 px-5 backdrop-blur-3xl select-none sm:flex">
                 <div className="flex items-center gap-5 max-sm:w-full max-sm:justify-center">
-                    <img src="/images/logo.svg" alt="logo" className="dark:invert" />
-                    <p className="font-bold">Vishwa's Portfolio</p>
+                    <div className="flex cursor-pointer items-center gap-3">
+                        <img src="/images/logo.svg" alt="logo" className="dark:invert" />
+                        <p className="font-bold">Vishwa Vivek Yadav</p>
+                    </div>
                     <ul className="text-foreground flex items-center gap-5 max-sm:hidden">
                         {navLinks.map(({ id, name, type }) => (
                             <li key={id} onClick={() => openWindow(type)}>

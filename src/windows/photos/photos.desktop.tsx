@@ -20,16 +20,16 @@ const PhotosDesktop = () => {
                 </div>
             </div>
 
-            <div className="flex w-full">
-                <div className="border-border bg-muted flex w-3/12 flex-none flex-col border-r p-5">
-                    <h2 className="text-muted-foreground mb-1 text-xs font-medium">Photos</h2>
+            <div className="flex w-2xl">
+                <div className="border-border bg-muted flex w-3/12 flex-none flex-col border-r px-2 py-5">
+                    <h2 className="text-muted-foreground mb-1 px-3 text-xs font-medium">Photos</h2>
                     <ul>
                         {photosLinks.map(({ id, icon, title }) => (
                             <li
                                 key={id}
-                                className="first:bg-accent/20 first:text-accent flex cursor-pointer items-center gap-2 space-y-1 rounded-md px-3 py-2 transition-colors"
+                                className="first:bg-accent/20 first:text-accent flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 transition-colors"
                             >
-                                <img src={icon} alt={title} className="w-4" />
+                                <img src={icon} alt={title} className="size-4" />
                                 <p className="text-sm font-medium">{title}</p>
                             </li>
                         ))}

@@ -37,7 +37,7 @@ const ThemeDropdown = ({ iconSrc }: Props) => {
         <DropdownMenu>
             <DropdownMenuTrigger asChild className="cursor-pointer focus-visible:outline-none">
                 <button type="button" className="mt-1.5" aria-label={modeLabel} title={modeLabel}>
-                    <img src={iconSrc} alt="toggle-theme" className="icon nav-icon" />
+                    <img src={iconSrc} alt="toggle-theme" className="icon nav-icon dark:invert" />
                 </button>
             </DropdownMenuTrigger>
 

@@ -38,7 +38,7 @@ const Home = () => {
                             alt={project.name}
                             className="group-hover:bg-foreground/10 rounded-md p-1"
                         />
-                        <p className="group-hover:bg-accent text-foreground group-hover:text-accent-foreground max-w-40 rounded-md px-1 text-center text-sm transition-colors">
+                        <p className="text-foreground max-w-40 rounded-md px-1 text-center text-sm transition-colors group-hover:bg-blue-500">
                             {project.name}
                         </p>
                     </li>

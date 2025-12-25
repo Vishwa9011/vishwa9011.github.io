@@ -71,12 +71,13 @@ const Welcome = () => {
     return (
         <section
             id="welcome"
-            className="abs-center text-foreground flex flex-col items-center justify-center select-none max-sm:h-screen max-sm:w-full max-sm:px-10"
+            className="abs-center flex flex-col items-center justify-center text-white select-none max-sm:h-screen max-sm:w-full max-sm:px-10"
         >
+            <h1 className="sr-only">Vishwa Vivek yadav</h1>
             <p ref={subtitleRef}>
                 {renderText("Hey, I'm Vishwa Vivek! Welcome to my", 'text-2xl sm:text-3xl font-georama', 100)}
             </p>
-            <h1 ref={titleRef}>{renderText('portfolio', 'sm:text-9xl text-7xl italic font-georama', 400)}</h1>
+            <h2 ref={titleRef}>{renderText('portfolio', 'sm:text-9xl text-7xl italic font-georama', 400)}</h2>
         </section>
     );
 };

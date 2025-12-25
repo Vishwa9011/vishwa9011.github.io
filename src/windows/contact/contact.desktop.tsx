@@ -35,7 +35,7 @@ const ContactDesktop = () => {
                             className="border-border bg-card text-foreground hover:bg-muted w-60 origin-center rounded-lg border p-3 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
                         >
                             <a href={link} target="_blank" rel="noopener noreferrer" className="space-y-5">
-                                <img src={icon} alt={text} />
+                                <img src={icon} alt={text} className="invert dark:invert-0" />
                                 <p className="text-sm font-semibold">{text}</p>
                             </a>
                         </li>

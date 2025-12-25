@@ -23,7 +23,7 @@ const ResumeDesktop = () => {
             </div>
 
             <Document file="files/resume.pdf">
-                <Page pageNumber={1} renderAnnotationLayer renderTextLayer />
+                <Page pageNumber={1} canvasBackground="black" renderAnnotationLayer renderTextLayer />
             </Document>
         </>
     );

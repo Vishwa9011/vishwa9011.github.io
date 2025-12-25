@@ -37,15 +37,15 @@ const FinderDesktop = () => {
     const renderList = (name: string, locations: Location[]) => {
         return (
             <div>
-                <h3 className="text-muted-foreground mb-1 text-xs font-medium">{name}</h3>
+                <h3 className="text-muted-foreground mb-1 px-2 text-xs font-medium">{name}</h3>
                 <ul className="space-y-1">
                     {locations.map(location => (
                         <li
                             key={location.id}
                             onClick={() => setActiveLocation(location)}
                             className={cn(
-                                'flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 transition-colors',
-                                location.id === activeLocation.id ? 'bg-accent/20 text-accent' : null,
+                                'hover:bg-muted-foreground/10 flex cursor-pointer items-center gap-2 rounded-md px-2 py-2 transition-colors',
+                                location.id === activeLocation.id ? 'bg-muted-foreground/10 text-blue-500' : null,
                             )}
                         >
                             <img src={location.icon} alt={location.name} className="w-4" />
@@ -68,7 +68,7 @@ const FinderDesktop = () => {
             </div>
 
             <div className="flex h-full">
-                <div className="border-border bg-muted flex w-48 flex-col space-y-3 border-r p-5">
+                <div className="border-border bg-muted flex w-48 flex-col space-y-3 border-r px-3 py-5">
                     {renderList('Favorites', Object.values(locations))}
                     {renderList('My Projects', locations.work.children)}
                 </div>
