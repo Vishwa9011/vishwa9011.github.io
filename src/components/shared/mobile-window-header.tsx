@@ -9,7 +9,7 @@ export function MobileWindowHeader({ title, onClose }: MobileWindowHeaderProps) 
         <div className="z-10 flex h-10 w-full items-center gap-5 px-3 pb-3">
             <div className="flex flex-1 cursor-pointer items-center gap-1" onClick={onClose}>
                 <ChevronLeft className="size-4" />
-                <span className="text-sm text-blue-500">Go Back </span>
+                <span className="text-link text-sm">Go Back </span>
             </div>
 
             <div className="flex-[1.5]">

@@ -15,7 +15,7 @@ const TerminalMobile = () => {
                     show tech stack
                 </p>
 
-                <ul className="mb-5 border-b-2 py-5">
+                <ul className="border-border mb-5 border-b py-5">
                     {techStack.map(({ category, items }) => (
                         <li key={category} className="mb-4 flex flex-col">
                             <div className="flex items-center gap-2">

@@ -24,8 +24,8 @@ const ContactMobile = () => {
                     </a>
                 </p>
                 <ul className="flex flex-col justify-center gap-2">
-                    {socials.map(({ id, bg, link, icon, text }) => (
-                        <li key={id} style={{ backgroundColor: bg }} className="rounded-xl">
+                    {socials.map(({ id, link, icon, text }) => (
+                        <li key={id} className="bg-brand text-brand-foreground rounded-xl">
                             <a
                                 href={link}
                                 target="_blank"

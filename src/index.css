@@ -43,10 +43,6 @@ body {
     .icon-hover {
         @apply hover:bg-muted inline-flex items-center justify-center rounded-md transition-colors duration-200;
     }
-
-    .nav-icon {
-        @apply dark:invert;
-    }
 }
 
 @theme inline {
@@ -92,6 +88,8 @@ body {
     --color-warning: var(--warning);
     --color-brand: var(--brand);
     --color-brand-foreground: var(--brand-foreground);
+    --color-link: var(--link);
+    --color-link-hover: var(--link-hover);
 
     --spacing-nav-height: 3rem;
 }
@@ -99,31 +97,46 @@ body {
 :root {
     --radius: 0.625rem;
 
-    --surface: oklch(0.985 0.007 255);
-    --surface-muted: oklch(0.95 0.006 255);
-    --surface-strong: oklch(0.9 0.005 255);
+    /* ===== Surfaces (lighter, more Apple-like) ===== */
+    --surface: oklch(0.985 0.006 255);
+    --surface-muted: oklch(0.96 0.005 255);
+    --surface-strong: oklch(0.92 0.004 255);
 
-    --text: oklch(0.145 0.015 255);
+    /* ===== Text ===== */
+    --text: oklch(0.14 0.014 255);
     --text-muted: oklch(0.52 0.01 255);
 
-    --accent: #2563eb;
-    --accent-foreground: #f8fafc;
+    /* ===== Accent (less Tailwind, more macOS) ===== */
+    --accent: oklch(0.62 0.15 255);
+    --accent-foreground: oklch(0.98 0.01 255);
 
-    --brand: #ec4899;
-    --brand-foreground: #fff1f2;
+    /* ===== Links ===== */
+    --link: var(--accent);
+    --link-hover: color-mix(in oklab, var(--link) 80%, var(--text) 20%);
 
-    --success: #00a154;
-    --warning: #f5c04c;
-    --destructive: #e25c55;
-    --border: oklch(0.88 0.005 255);
+    /* ===== Brand (used sparingly) ===== */
+    --brand: oklch(0.72 0.17 355);
+    --brand-foreground: oklch(0.98 0.01 355);
+
+    /* ===== Status colors ===== */
+    --success: oklch(0.67 0.14 145);
+    --warning: oklch(0.78 0.15 85);
+    --destructive: oklch(0.62 0.2 25);
+
+    /* ===== Borders & inputs (very subtle) ===== */
+    --border: oklch(0.92 0.003 255);
     --input: var(--border);
     --ring: color-mix(in oklab, var(--accent) 55%, var(--border) 45%);
+
+    /* ===== Charts ===== */
     --chart-1: var(--accent);
-    --chart-2: #22b3bc;
-    --chart-3: #8b5cf6;
-    --chart-4: #f59e0b;
-    --chart-5: #f97316;
-    --sidebar: var(--surface);
+    --chart-2: oklch(0.7 0.12 200);
+    --chart-3: oklch(0.68 0.14 275);
+    --chart-4: oklch(0.75 0.15 85);
+    --chart-5: oklch(0.7 0.17 40);
+
+    /* ===== Sidebar (slightly distinct from background) ===== */
+    --sidebar: oklch(from var(--surface) calc(l - 0.015) c h);
     --sidebar-foreground: var(--text);
     --sidebar-primary: var(--accent);
     --sidebar-primary-foreground: var(--accent-foreground);
@@ -132,6 +145,7 @@ body {
     --sidebar-border: var(--border);
     --sidebar-ring: var(--ring);
 
+    /* ===== Core mappings ===== */
     --background: var(--surface);
     --foreground: var(--text);
     --card: var(--surface);
@@ -147,31 +161,42 @@ body {
 }
 
 .dark {
-    --surface: oklch(23.503% 0.00003 271.152);
-    --surface-muted: oklch(31.714% 0.00004 271.152);
-    --surface-strong: oklch(0.32 0.009 255);
+    /* ===== Surfaces ===== */
+    --surface: oklch(0.23 0.01 255);
+    --surface-muted: oklch(0.28 0.01 255);
+    --surface-strong: oklch(0.32 0.015 255);
 
+    /* ===== Text ===== */
     --text: oklch(0.96 0.01 255);
     --text-muted: oklch(0.72 0.008 255);
 
-    --accent: #7cb1ff;
-    --accent-foreground: #0f172a;
+    /* ===== Accent ===== */
+    --accent: oklch(0.75 0.14 255);
+    --accent-foreground: oklch(0.12 0.02 255);
 
-    --brand: #f472b6;
-    --brand-foreground: #0b1220;
+    /* ===== Brand ===== */
+    --brand: oklch(0.78 0.16 355);
+    --brand-foreground: oklch(0.14 0.02 355);
 
-    --success: #22c55e;
-    --warning: #facc15;
-    --destructive: #f87171;
-    --border: oklch(0.34 0.004 255);
+    /* ===== Status ===== */
+    --success: oklch(0.7 0.16 145);
+    --warning: oklch(0.82 0.16 85);
+    --destructive: oklch(0.72 0.2 25);
+
+    /* ===== Borders ===== */
+    --border: oklch(0.36 0.004 255);
     --input: var(--border);
     --ring: color-mix(in oklab, var(--accent) 60%, var(--border) 40%);
+
+    /* ===== Charts ===== */
     --chart-1: var(--accent);
-    --chart-2: #22b3bc;
-    --chart-3: #c4b5fd;
-    --chart-4: #fb923c;
-    --chart-5: #f97316;
-    --sidebar: var(--surface);
+    --chart-2: oklch(0.72 0.14 200);
+    --chart-3: oklch(0.8 0.12 275);
+    --chart-4: oklch(0.78 0.16 85);
+    --chart-5: oklch(0.74 0.18 40);
+
+    /* ===== Sidebar ===== */
+    --sidebar: oklch(from var(--surface) calc(l + 0.015) c h);
     --sidebar-foreground: var(--text);
     --sidebar-primary: var(--accent);
     --sidebar-primary-foreground: var(--accent-foreground);
@@ -180,7 +205,8 @@ body {
     --sidebar-border: var(--border);
     --sidebar-ring: var(--ring);
 
-    --background: var(--surface-muted);
+    /* ===== Core mappings ===== */
+    --background: var(--surface);
     --foreground: var(--text);
     --card: var(--surface);
     --card-foreground: var(--text);

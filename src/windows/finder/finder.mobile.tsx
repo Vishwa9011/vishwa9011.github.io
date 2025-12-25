@@ -77,8 +77,8 @@ const FinderMobile = () => {
                         className="flex cursor-pointer items-center gap-2"
                         onClick={() => handleBreadcrumbClick(null)}
                     >
-                        <span className="text-sm text-blue-500">Portfolio</span>
-                        <ChevronRight className="size-4 text-gray-400" />
+                        <span className="text-link text-sm">Portfolio</span>
+                        <ChevronRight className="text-muted-foreground size-4" />
                     </button>
                     {history.map((item, index) => (
                         <button
@@ -87,8 +87,8 @@ const FinderMobile = () => {
                             onClick={() => handleBreadcrumbClick(index)}
                             key={item.id}
                         >
-                            <span className="max-w-32 truncate text-sm text-blue-500">{item.name}</span>
-                            {index !== history.length - 1 && <ChevronRight className="size-4 text-gray-400" />}
+                            <span className="text-link max-w-32 truncate text-sm">{item.name}</span>
+                            {index !== history.length - 1 && <ChevronRight className="text-muted-foreground size-4" />}
                         </button>
                     ))}
                 </div>

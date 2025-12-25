@@ -10,9 +10,9 @@ const WindowControls = ({ target }: WindowControlsProps) => {
 
     return (
         <div id="window-controls" className="flex gap-2">
-            <div className="size-3.5 cursor-pointer rounded-full bg-[#ff6157]" onClick={() => closeWindow(target)} />
-            <div className="size-3.5 rounded-full bg-[#ffc030]" />
-            <div className="size-3.5 rounded-full bg-[#2acb42]" />
+            <div className="bg-destructive size-3.5 cursor-pointer rounded-full" onClick={() => closeWindow(target)} />
+            <div className="bg-warning size-3.5 rounded-full" />
+            <div className="bg-success size-3.5 rounded-full" />
         </div>
     );
 };

@@ -71,7 +71,7 @@ const Welcome = () => {
     return (
         <section
             id="welcome"
-            className="abs-center flex flex-col items-center justify-center text-white select-none max-sm:h-screen max-sm:w-full max-sm:px-10"
+            className="abs-center text-foreground flex flex-col items-center justify-center select-none max-sm:h-screen max-sm:w-full max-sm:px-10"
         >
             <p ref={subtitleRef}>
                 {renderText("Hey, I'm Vishwa Vivek! Welcome to my", 'text-2xl sm:text-3xl font-georama', 100)}

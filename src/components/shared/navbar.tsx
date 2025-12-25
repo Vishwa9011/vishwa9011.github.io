@@ -13,7 +13,7 @@ const Navbar = () => {
         <>
             <nav className="bg-card/60 text-foreground hidden items-center justify-between p-2 px-5 backdrop-blur-3xl select-none sm:flex">
                 <div className="flex items-center gap-5 max-sm:w-full max-sm:justify-center">
-                    <img src="/images/logo.svg" alt="logo" className="dark:invert" />
+                    <img src="/images/logo.svg" alt="logo" />
                     <p className="font-bold">Vishwa's Portfolio</p>
                     <ul className="text-foreground flex items-center gap-5 max-sm:hidden">
                         {navLinks.map(({ id, name, type }) => (
@@ -52,13 +52,13 @@ function MobileNavbar() {
     return (
         <section
             className={cn(
-                'h-nav-height relative flex items-center justify-between gap-5 px-5 py-3 text-white sm:hidden',
+                'h-nav-height text-foreground relative flex items-center justify-between gap-5 px-5 py-3 sm:hidden',
             )}
             style={{ zIndex: nextZIndex }}
         >
             <p>{dayjs().format('h:mm A')}</p>
 
-            <div className="mx-auto h-6 w-40 rounded-full bg-black"></div>
+            <div className="bg-foreground/80 mx-auto h-6 w-40 rounded-full"></div>
             <ul className="flex items-center gap-2">
                 <li>
                     <Wifi className="size-4" />

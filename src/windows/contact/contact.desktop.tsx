@@ -29,15 +29,14 @@ const ContactDesktop = () => {
                     </a>
                 </p>
                 <ul className="flex items-center gap-3">
-                    {socials.map(({ id, bg, link, icon, text }) => (
+                    {socials.map(({ id, link, icon, text }) => (
                         <li
                             key={id}
-                            style={{ backgroundColor: bg }}
-                            className="w-60 origin-center rounded-lg p-3 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
+                            className="bg-brand text-brand-foreground w-60 origin-center rounded-lg p-3 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
                         >
                             <a href={link} target="_blank" rel="noopener noreferrer" className="space-y-5">
                                 <img src={icon} alt={text} />
-                                <p className="text-sm font-semibold text-white">{text}</p>
+                                <p className="text-brand-foreground text-sm font-semibold">{text}</p>
                             </a>
                         </li>
                     ))}
