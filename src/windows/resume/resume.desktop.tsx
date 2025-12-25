@@ -2,11 +2,12 @@ import { Download } from 'lucide-react';
 import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
 
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
+import { Document, Page } from 'react-pdf';
+import { initReactPdf } from '@/lib/react-pdf';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
+initReactPdf();
+
+const RESUME_PDF_URL = `${import.meta.env.BASE_URL}files/resume.pdf`;
 
 const ResumeDesktop = () => {
     return (
@@ -17,14 +18,22 @@ const ResumeDesktop = () => {
             >
                 <WindowControls target="resume" />
                 <h2 className="flex-1 text-center text-sm font-bold">Resume.pdf</h2>
-                <a href="files/resume.pdf" download className="cursor-pointer" title="Download resume">
+                <a href={RESUME_PDF_URL} download className="cursor-pointer" title="Download resume">
                     <Download className="icon" />
                 </a>
             </div>
 
-            <Document file="files/resume.pdf">
-                <Page pageNumber={1} canvasBackground="black" renderAnnotationLayer renderTextLayer />
-            </Document>
+            <div className="resume-pdf bg-background flex justify-center p-4">
+                <Document
+                    file={RESUME_PDF_URL}
+                    loading={<div className="text-muted-foreground p-4 text-sm">Loading PDF…</div>}
+                    error={<div className="p-4 text-sm text-red-500">Failed to load PDF.</div>}
+                    noData={<div className="text-muted-foreground p-4 text-sm">No PDF file specified.</div>}
+                    onLoadError={error => console.error('Failed to load resume PDF:', error)}
+                >
+                    <Page pageNumber={1} renderAnnotationLayer renderTextLayer />
+                </Document>
+            </div>
         </>
     );
 };
