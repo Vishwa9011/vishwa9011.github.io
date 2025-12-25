@@ -8,7 +8,7 @@ import { Draggable } from 'gsap/Draggable';
 
 const projects = locations.work.children;
 
-const Home = () => {
+const HomeDesktop = () => {
     const { openWindow } = useWindowStore();
     const { setActiveLocation } = useLocationStore();
 
@@ -18,12 +18,15 @@ const Home = () => {
     };
 
     useGSAP(() => {
-        Draggable.create('.folder');
+        const instances = Draggable.create('.folder');
+        return () => {
+            instances.forEach(instance => instance.kill());
+        };
     }, []);
 
     return (
         <section id="home" className="relative z-0">
-            <ul className="hidden sm:block">
+            <ul>
                 {projects.map(project => (
                     <li
                         key={project.id}
@@ -44,29 +47,9 @@ const Home = () => {
                     </li>
                 ))}
             </ul>
-
-            <ul className="flex items-center gap-2 px-5 sm:hidden">
-                <li
-                    key={'pages'}
-                    onClick={() => openWindow('resume')}
-                    className={cn('group folder inline-flex size-20 items-center justify-center')}
-                >
-                    <img src={'/images/pages.png'} alt={'pages.png'} className="w-full object-contain object-center" />
-                </li>
-                <li
-                    key={'terminal'}
-                    onClick={() => openWindow('terminal')}
-                    className={cn('group folder inline-flex size-[84px] items-center justify-center')}
-                >
-                    <img
-                        src={'/images/terminal.png'}
-                        alt={'pages.png'}
-                        className="w-full object-contain object-center"
-                    />
-                </li>
-            </ul>
         </section>
     );
 };
 
-export default Home;
+export default HomeDesktop;
+export { HomeDesktop };

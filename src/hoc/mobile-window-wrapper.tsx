@@ -16,7 +16,7 @@ export function MobileWindowWrapper<Props extends object>(Component: ComponentTy
         return (
             <section
                 id={`mobile-${windowKey}`}
-                className="bg-card pt-nav-height fixed inset-0 z-50 flex h-full w-full flex-col"
+                className="bg-card pt-nav-height fixed inset-0 z-50 flex h-full w-full flex-col overflow-y-auto overscroll-contain"
                 style={{ zIndex }}
             >
                 <Component {...props} />

@@ -54,13 +54,13 @@ function MobileNavbar() {
     return (
         <section
             className={cn(
-                'h-nav-height text-foreground relative flex items-center justify-between gap-5 px-5 py-3 sm:hidden',
+                'h-nav-height relative flex items-center justify-between gap-5 px-5 py-3 text-white sm:hidden',
             )}
             style={{ zIndex: nextZIndex }}
         >
             <p>{dayjs().format('h:mm A')}</p>
 
-            <div className="bg-foreground/80 mx-auto h-6 w-40 rounded-full"></div>
+            <div className="mx-auto h-6 w-40 rounded-full bg-black/80"></div>
             <ul className="flex items-center gap-2">
                 <li>
                     <Wifi className="size-4" />
