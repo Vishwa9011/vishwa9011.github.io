@@ -17,13 +17,13 @@ const ContactDesktop = () => {
                 <img src="/images/adrian.jpg" alt="adrian" className="w-20 rounded-full" />
 
                 <h3 className="text-xl font-semibold">Let's Connect</h3>
-                <p>Got an idea? A bug to squash? Or just wanna talk tech? I'm in.</p>
+                <p className="text-muted-foreground">Got an idea? A bug to squash? Or just wanna talk tech? I'm in.</p>
                 <p>
                     <a
                         href="mailTo:vishu842301@gmail.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline"
+                        className="text-link hover:text-link-hover underline underline-offset-2"
                     >
                         vishu842301@gmail.com
                     </a>
@@ -32,11 +32,11 @@ const ContactDesktop = () => {
                     {socials.map(({ id, link, icon, text }) => (
                         <li
                             key={id}
-                            className="bg-brand text-brand-foreground w-60 origin-center rounded-lg p-3 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
+                            className="border-border bg-card text-foreground hover:bg-muted w-60 origin-center rounded-lg border p-3 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
                         >
                             <a href={link} target="_blank" rel="noopener noreferrer" className="space-y-5">
                                 <img src={icon} alt={text} />
-                                <p className="text-brand-foreground text-sm font-semibold">{text}</p>
+                                <p className="text-sm font-semibold">{text}</p>
                             </a>
                         </li>
                     ))}

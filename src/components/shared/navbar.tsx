@@ -13,7 +13,7 @@ const Navbar = () => {
         <>
             <nav className="bg-card/60 text-foreground hidden items-center justify-between p-2 px-5 backdrop-blur-3xl select-none sm:flex">
                 <div className="flex items-center gap-5 max-sm:w-full max-sm:justify-center">
-                    <img src="/images/logo.svg" alt="logo" />
+                    <img src="/images/logo.svg" alt="logo" className="dark:invert" />
                     <p className="font-bold">Vishwa's Portfolio</p>
                     <ul className="text-foreground flex items-center gap-5 max-sm:hidden">
                         {navLinks.map(({ id, name, type }) => (
@@ -28,7 +28,7 @@ const Navbar = () => {
                     <ul className="text-foreground flex items-center gap-5 max-sm:hidden">
                         {otherIcons.map(({ id, img }) => (
                             <li key={id}>
-                                <img src={img} className="icon nav-icon" alt={`icon-${id}`} />
+                                <img src={img} className="icon dark:invert" alt={`icon-${id}`} />
                             </li>
                         ))}
 
