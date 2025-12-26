@@ -127,20 +127,16 @@ const techStack = [
         items: ['React.js', 'Next.js', 'TypeScript'],
     },
     {
-        category: 'Mobile',
-        items: ['React Native', 'Expo'],
-    },
-    {
-        category: 'Styling',
-        items: ['Tailwind CSS', 'Sass', 'CSS'],
-    },
-    {
         category: 'Backend',
-        items: ['Node.js', 'Express', 'NestJS', 'Hono'],
+        items: ['Node.js', 'Express.js', 'NestJS'],
     },
     {
         category: 'Database',
         items: ['MongoDB', 'PostgreSQL'],
+    },
+    {
+        category: 'Blockchain',
+        items: ['Solidity', 'Ethereum', 'Hardhat', 'Foundry'],
     },
     {
         category: 'Dev Tools',
@@ -423,13 +419,12 @@ const ABOUT_LOCATION = {
             kind: 'file',
             fileType: 'txt',
             position: 'top-60 left-5',
-            subtitle: 'Meet the Developer Behind the Code',
+            subtitle: 'Full Stack Engineer',
             image: '/images/vishwa.webp',
             description: [
-                'Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.',
-                'I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.',
-                'I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.',
-                "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+                'Full Stack Engineer with 2+ years of experience building scalable MERN applications and Ethereum smart contracts.',
+                'Skilled in React, Next.js, Node.js, MongoDB, and Solidity.',
+                'Hands-on experience with Hardhat and Foundry for secure contract development and testing.',
             ],
         },
     ],

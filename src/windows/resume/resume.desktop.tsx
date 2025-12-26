@@ -1,6 +1,6 @@
 import { Download } from 'lucide-react';
-import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
+import WindowWrapper from '@/hoc/window-wrapper';
 
 import { Document, Page } from 'react-pdf';
 import { initReactPdf } from '@/lib/react-pdf';
