@@ -67,7 +67,7 @@ const FinderDesktop = () => {
                 <Search className="icon" />
             </div>
 
-            <div className="flex h-full">
+            <div className="flex h-full min-h-[50vh]">
                 <div className="border-border bg-muted flex w-48 flex-col space-y-3 border-r px-3 py-5">
                     {renderList('Favorites', Object.values(locations))}
                     {renderList('My Projects', locations.work.children)}
