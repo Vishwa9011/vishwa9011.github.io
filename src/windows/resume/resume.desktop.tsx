@@ -29,7 +29,7 @@ const ResumeDesktop = () => {
                 </a>
             </div>
 
-            <div className="resume-pdf bg-background flex justify-center p-4">
+            <div className="resume-pdf bg-background flex min-w-lg justify-center p-4">
                 <Document
                     file={RESUME_PDF_URL}
                     loading={<div className="text-muted-foreground p-4 text-sm">Loading PDF…</div>}

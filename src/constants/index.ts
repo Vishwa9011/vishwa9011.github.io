@@ -242,7 +242,7 @@ const WORK_LOCATION = {
                 },
                 {
                     id: 2,
-                    name: 'live demo',
+                    name: 'auditforge.vercel.app',
                     icon: '/images/safari.png',
                     kind: 'file',
                     fileType: 'url',
