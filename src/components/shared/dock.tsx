@@ -6,6 +6,7 @@ import { dockApps } from '@constants';
 import useWindowStore from '@/store/window';
 import type { WindowKey } from '@/types';
 import { useMobile } from '@/hooks/use-mobile';
+import { cn } from '@/lib/utils';
 
 type ToggleAppParams = {
     id: string;
@@ -99,7 +100,7 @@ const Dock = () => {
                     <div key={id} className="relative flex justify-center">
                         <button
                             type="button"
-                            className="dock-icon size-full cursor-pointer sm:size-14"
+                            className="dock-icon cursor-pointer"
                             aria-label={name}
                             data-tooltip-id="dock-tooltip"
                             data-tooltip-content={name}
@@ -111,9 +112,10 @@ const Dock = () => {
                                 src={`/images/${icon}`}
                                 alt={`icon-${name}`}
                                 loading="lazy"
-                                className={
-                                    canOpen ? 'object-cover object-center' : 'object-cover object-center opacity-60'
-                                }
+                                className={cn(
+                                    'size-14',
+                                    canOpen ? 'object-cover object-center' : 'object-cover object-center opacity-60',
+                                )}
                             />
                         </button>
                     </div>
