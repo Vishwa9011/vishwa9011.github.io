@@ -4,21 +4,25 @@ import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 // https://vite.dev/config/
-export default defineConfig({
-    base: '/',
-    plugins: [
-        react({
-            babel: {
-                plugins: [['babel-plugin-react-compiler']],
+export default defineConfig(() => {
+    const base = '/';
+
+    return {
+        base,
+        plugins: [
+            react({
+                babel: {
+                    plugins: [['babel-plugin-react-compiler']],
+                },
+            }),
+            tailwindcss(),
+        ],
+        resolve: {
+            alias: {
+                '@': path.resolve(__dirname, './src'),
+                '@components': path.resolve(__dirname, './src/components'),
+                '@constants': path.resolve(__dirname, './src/constants'),
             },
-        }),
-        tailwindcss(),
-    ],
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src'),
-            '@components': path.resolve(__dirname, './src/components'),
-            '@constants': path.resolve(__dirname, './src/constants'),
         },
-    },
+    };
 });
