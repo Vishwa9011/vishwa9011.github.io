@@ -52,4 +52,3 @@ const HomeDesktop = () => {
 };
 
 export default HomeDesktop;
-export { HomeDesktop };

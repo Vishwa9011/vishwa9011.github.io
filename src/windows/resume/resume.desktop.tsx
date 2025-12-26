@@ -7,7 +7,8 @@ import { initReactPdf } from '@/lib/react-pdf';
 
 initReactPdf();
 
-const RESUME_PDF_URL = `${import.meta.env.BASE_URL}files/resume.pdf`;
+export const RESUME_PDF_URL = `${import.meta.env.BASE_URL}files/resume.pdf`;
+export const RESUME_DOWNLOAD_FILENAME = 'Vishwa_Vivek_Yadav_Resume.pdf';
 
 const ResumeDesktop = () => {
     return (
@@ -18,7 +19,12 @@ const ResumeDesktop = () => {
             >
                 <WindowControls target="resume" />
                 <h2 className="flex-1 text-center text-sm font-bold">Resume.pdf</h2>
-                <a href={RESUME_PDF_URL} download className="cursor-pointer" title="Download resume">
+                <a
+                    href={RESUME_PDF_URL}
+                    download={RESUME_DOWNLOAD_FILENAME}
+                    className="cursor-pointer"
+                    title="Download resume"
+                >
                     <Download className="icon" />
                 </a>
             </div>

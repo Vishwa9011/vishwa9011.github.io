@@ -4,6 +4,52 @@
         <meta charset="UTF-8" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Interactive, macOS-inspired portfolio of Vishwa Vivek Yadav featuring projects, skills, resume, and contact info."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta name="author" content="Vishwa Vivek Yadav" />
+        <meta name="theme-color" content="#0b0f17" />
+        <link rel="canonical" href="https://example.com/" />
+
+        <meta property="og:title" content="Vishwa Vivek Yadav | Portfolio" />
+        <meta
+            property="og:description"
+            content="Interactive, macOS-inspired portfolio of Vishwa Vivek Yadav featuring projects, skills, resume, and contact info."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/blog1.png" />
+        <meta property="og:url" content="https://example.com/" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Vishwa Vivek Yadav | Portfolio" />
+        <meta
+            name="twitter:description"
+            content="Interactive, macOS-inspired portfolio of Vishwa Vivek Yadav featuring projects, skills, resume, and contact info."
+        />
+        <meta name="twitter:image" content="/images/blog1.png" />
+
+        <script>
+            (() => {
+                const canonical = document.querySelector('link[rel="canonical"]');
+                if (canonical) canonical.href = window.location.origin + window.location.pathname;
+
+                const ogUrl = document.querySelector('meta[property="og:url"]');
+                if (ogUrl) ogUrl.setAttribute('content', window.location.origin + window.location.pathname);
+            })();
+        </script>
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Vishwa Vivek Yadav",
+                "email": "mailto:vishu842301@gmail.com",
+                "sameAs": ["https://github.com/vishwa9011", "https://www.linkedin.com/in/vishwa-vivek-yadav"]
+            }
+        </script>
+
         <!-- Preconnect to Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,6 +65,18 @@
 
     <body>
         <div id="root"></div>
+        <noscript>
+            <h1>Vishwa Vivek Yadav</h1>
+            <p>Interactive, macOS-inspired portfolio featuring projects, resume, and contact details.</p>
+            <p>
+                Email:
+                <a href="mailto:vishu842301@gmail.com">vishu842301@gmail.com</a>
+            </p>
+            <p>
+                <a href="https://github.com/vishwa9011">GitHub</a> ·
+                <a href="https://www.linkedin.com/in/vishwa-vivek-yadav">LinkedIn</a>
+            </p>
+        </noscript>
         <script type="module" src="/src/main.tsx"></script>
     </body>
 </html>

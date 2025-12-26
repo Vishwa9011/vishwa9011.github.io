@@ -156,20 +156,6 @@ const socials = [
         bg: '#f4656b',
         link: 'https://github.com/vishwa9011',
     },
-    // {
-    //     id: 2,
-    //     text: 'Platform',
-    //     icon: '/icons/atom.svg',
-    //     bg: '#4bcb63',
-    //     link: 'https://jsmastery.com/',
-    // },
-    // {
-    //     id: 3,
-    //     text: 'Twitter/X',
-    //     icon: '/icons/twitter.svg',
-    //     bg: '#ff866b',
-    //     link: 'https://x.com/jsmasterypro',
-    // },
     {
         id: 4,
         text: 'LinkedIn',
@@ -462,8 +448,6 @@ const RESUME_LOCATION = {
             icon: '/images/pdf.png',
             kind: 'file',
             fileType: 'pdf',
-            // you can add `href` if you want to open a hosted resume
-            // href: "/your/resume/path.pdf",
         },
     ],
 } satisfies Location;

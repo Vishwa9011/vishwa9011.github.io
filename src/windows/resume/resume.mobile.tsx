@@ -4,10 +4,12 @@ import { useEffect, useRef, useState } from 'react';
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import { MobileWindowHeader } from '@components/shared/mobile-window-header';
 import { initReactPdf } from '@/lib/react-pdf';
+import { Download } from 'lucide-react';
 
 initReactPdf();
 
 const RESUME_PDF_URL = `${import.meta.env.BASE_URL}files/resume.pdf`;
+const RESUME_DOWNLOAD_FILENAME = 'Vishwa_Vivek_Yadav_Resume.pdf';
 
 const ResumeMobile = () => {
     const { closeWindow } = useWindowStore();
@@ -36,7 +38,18 @@ const ResumeMobile = () => {
 
     return (
         <>
-            <MobileWindowHeader title="Resume" onClose={() => closeWindow('resume')} />
+            <div className="flex items-center justify-between">
+                <MobileWindowHeader title="Resume" onClose={() => closeWindow('resume')} />
+
+                <a
+                    href={RESUME_PDF_URL}
+                    download={RESUME_DOWNLOAD_FILENAME}
+                    className="w-min cursor-pointer pt-2 pr-3 pb-3"
+                    title="Download resume"
+                >
+                    <Download className="size-4" />
+                </a>
+            </div>
             <div className="resume-pdf bg-background w-full p-4">
                 <div ref={containerRef} className="flex w-full justify-center">
                     <Document

@@ -27,4 +27,3 @@ const HomeMobile = () => {
 };
 
 export default HomeMobile;
-export { HomeMobile };
