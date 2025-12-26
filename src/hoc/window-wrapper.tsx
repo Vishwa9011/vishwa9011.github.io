@@ -7,7 +7,6 @@ import useWindowStore from '@/store/window';
 import { Draggable } from 'gsap/Draggable';
 import type { ComponentType } from 'react';
 import { useLayoutEffect, useRef } from 'react';
-import { useMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 
 type NamedComponent = { displayName?: string; name?: string };
@@ -25,7 +24,6 @@ const DESKTOP_WINDOW_CLASSNAMES: Record<WindowKey, string> = {
 
 const WindowWrapper = <Props extends object>(Component: ComponentType<Props>, windowKey: WindowKey) => {
     const Wrapped = (props: Props) => {
-        const isMobile = useMobile();
         const windows = useWindowStore(state => state.windows);
         const focusWindow = useWindowStore(state => state.focusWindow);
         const { isOpen, zIndex } = windows[windowKey];
@@ -63,7 +61,7 @@ const WindowWrapper = <Props extends object>(Component: ComponentType<Props>, wi
             el.style.display = isOpen ? 'block' : 'none';
         }, [isOpen]);
 
-        if (isMobile) {
+        if (!isOpen) {
             return null;
         }
 

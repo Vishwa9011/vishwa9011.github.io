@@ -93,7 +93,7 @@ const Dock = () => {
         >
             <div
                 ref={dockRef}
-                className="bg-card/20 flex items-end justify-between gap-1.5 rounded-2xl p-1.5 backdrop-blur-md"
+                className="bg-card/20 flex items-end justify-between gap-1.5 rounded-2xl p-1.5 backdrop-blur-sm motion-reduce:backdrop-blur-none sm:backdrop-blur-md"
             >
                 {filteredDockApps.map(({ id, name, icon, canOpen }) => (
                     <div key={id} className="relative flex justify-center">
