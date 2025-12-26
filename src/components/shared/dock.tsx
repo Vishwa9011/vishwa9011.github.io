@@ -119,11 +119,13 @@ const Dock = () => {
                     </div>
                 ))}
 
-                <Tooltip
-                    id="dock-tooltip"
-                    place="top"
-                    className="!bg-accent/80 !text-accent-foreground !w-fit !rounded-md !px-3 !py-1 !text-center !text-xs !shadow-2xl"
-                />
+                {isMobile === false && (
+                    <Tooltip
+                        id="dock-tooltip"
+                        place="top"
+                        className="!bg-accent/80 !text-accent-foreground !w-fit !rounded-md !px-3 !py-1 !text-center !text-xs !shadow-2xl"
+                    />
+                )}
             </div>
         </section>
     );

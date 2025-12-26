@@ -58,7 +58,7 @@ function MobileNavbar() {
     return (
         <section
             className={cn(
-                'text-foreground h-nav-height relative flex items-center justify-between gap-5 px-5 py-3 backdrop-blur-sm sm:hidden dark:bg-transparent',
+                'text-foreground h-nav-height relative flex items-center justify-between gap-5 px-5 py-3 sm:hidden dark:bg-transparent',
                 !isAnyWindowOpen && 'text-white', // this will make sure that text is visible when no window is open
             )}
             style={{ zIndex: nextZIndex }}
