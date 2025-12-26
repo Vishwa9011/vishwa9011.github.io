@@ -26,7 +26,8 @@ const DESKTOP_WINDOW_CLASSNAMES: Record<WindowKey, string> = {
 const WindowWrapper = <Props extends object>(Component: ComponentType<Props>, windowKey: WindowKey) => {
     const Wrapped = (props: Props) => {
         const isMobile = useMobile();
-        const { windows, focusWindow } = useWindowStore();
+        const windows = useWindowStore(state => state.windows);
+        const focusWindow = useWindowStore(state => state.focusWindow);
         const { isOpen, zIndex } = windows[windowKey];
         const ref = useRef<HTMLDivElement>(null);
 
@@ -44,7 +45,7 @@ const WindowWrapper = <Props extends object>(Component: ComponentType<Props>, wi
 
         useGSAP(() => {
             const el = ref.current;
-            if (!el) return;
+            if (!el || !isOpen) return;
 
             const [instance] = Draggable.create(el, {
                 onPress: () => focusWindow(windowKey),
@@ -53,7 +54,7 @@ const WindowWrapper = <Props extends object>(Component: ComponentType<Props>, wi
             return () => {
                 instance.kill();
             };
-        }, []);
+        }, [isOpen]);
 
         useLayoutEffect(() => {
             const el = ref.current;

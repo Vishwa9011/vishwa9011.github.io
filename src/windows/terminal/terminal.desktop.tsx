@@ -57,4 +57,4 @@ const TerminalDesktop = () => {
 
 const TerminalDesktopWindow = WindowWrapper(TerminalDesktop, 'terminal');
 
-export { TerminalDesktopWindow };
+export default TerminalDesktopWindow;

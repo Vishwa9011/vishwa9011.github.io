@@ -1,8 +1,9 @@
-import { useMobile } from '@/hooks/use-mobile';
-import { PhotosDesktopWindow } from './photos.desktop';
-import { PhotosMobileWindow } from './photos.mobile';
+import { lazy } from 'react';
+import { DeviceSwitch } from '@components/shared';
+
+const PhotosDesktop = lazy(() => import('./photos.desktop'));
+const PhotosMobile = lazy(() => import('./photos.mobile'));
 
 export default function Photos() {
-    const isMobile = useMobile();
-    return isMobile ? <PhotosMobileWindow /> : <PhotosDesktopWindow />;
+    return <DeviceSwitch Mobile={PhotosMobile} Desktop={PhotosDesktop} />;
 }

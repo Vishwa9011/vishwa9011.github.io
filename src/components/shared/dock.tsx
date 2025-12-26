@@ -14,7 +14,10 @@ type ToggleAppParams = {
 
 const Dock = () => {
     const isMobile = useMobile();
-    const { windows, closeWindow, openWindow } = useWindowStore();
+    const windows = useWindowStore(state => state.windows);
+    const openWindow = useWindowStore(state => state.openWindow);
+    const closeWindow = useWindowStore(state => state.closeWindow);
+
     const dockRef = useRef<HTMLDivElement>(null);
 
     const filteredDockApps = dockApps.filter(app => (isMobile ? app.mobileVisibility !== false : true));

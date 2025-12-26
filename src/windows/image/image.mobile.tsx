@@ -26,4 +26,4 @@ const ImageMobile = () => {
 
 const ImageMobileWindow = MobileWindowWrapper(ImageMobile, 'imgfile');
 
-export { ImageMobileWindow };
+export default ImageMobileWindow;

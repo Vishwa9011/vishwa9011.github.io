@@ -43,6 +43,4 @@ const ContactMobile = () => {
     );
 };
 
-const ContactMobileWindow = MobileWindowWrapper(ContactMobile, 'contact');
-
-export { ContactMobileWindow };
+export default MobileWindowWrapper(ContactMobile, 'contact');

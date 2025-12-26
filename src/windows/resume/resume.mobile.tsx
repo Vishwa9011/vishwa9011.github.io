@@ -57,4 +57,4 @@ const ResumeMobile = () => {
 
 const ResumeMobileWindow = MobileWindowWrapper(ResumeMobile, 'resume');
 
-export { ResumeMobileWindow };
+export default ResumeMobileWindow;

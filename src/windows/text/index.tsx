@@ -1,8 +1,9 @@
-import { useMobile } from '@/hooks/use-mobile';
-import { TextMobileWindow } from './text.mobile';
-import { TextDesktopWindow } from './text.desktop';
+import { lazy } from 'react';
+import { DeviceSwitch } from '@components/shared';
+
+const TextDesktop = lazy(() => import('./text.desktop'));
+const TextMobile = lazy(() => import('./text.mobile'));
 
 export default function Text() {
-    const isMobile = useMobile();
-    return isMobile ? <TextMobileWindow /> : <TextDesktopWindow />;
+    return <DeviceSwitch Mobile={TextMobile} Desktop={TextDesktop} />;
 }

@@ -51,4 +51,4 @@ const TerminalMobile = () => {
 
 const TerminalMobileWindow = MobileWindowWrapper(TerminalMobile, 'terminal');
 
-export { TerminalMobileWindow };
+export default TerminalMobileWindow;

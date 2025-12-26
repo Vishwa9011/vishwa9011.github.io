@@ -6,7 +6,7 @@ import { Battery, Wifi } from 'lucide-react';
 import { navIcons, navLinks, portfolioIdentity } from '@constants';
 
 const Navbar = () => {
-    const { openWindow } = useWindowStore();
+    const openWindow = useWindowStore().openWindow;
     const otherIcons = navIcons.filter(icon => icon.action !== 'theme');
 
     return (

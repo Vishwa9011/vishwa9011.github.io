@@ -1,9 +1,9 @@
-import { useMobile } from '@/hooks/use-mobile';
-import { TerminalDesktopWindow } from './terminal.desktop';
-import { TerminalMobileWindow } from './terminal.mobile';
+import { lazy } from 'react';
+import { DeviceSwitch } from '@components/shared';
+
+const TerminalDesktop = lazy(() => import('./terminal.desktop'));
+const TerminalMobile = lazy(() => import('./terminal.mobile'));
 
 export default function Terminal() {
-    const isMobile = useMobile();
-
-    return isMobile ? <TerminalMobileWindow /> : <TerminalDesktopWindow />;
+    return <DeviceSwitch Mobile={TerminalMobile} Desktop={TerminalDesktop} />;
 }

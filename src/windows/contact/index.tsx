@@ -1,9 +1,9 @@
-import { useMobile } from '@/hooks/use-mobile';
-import { ContactDesktopWindow } from './contact.desktop';
-import { ContactMobileWindow } from './contact.mobile';
+import { lazy } from 'react';
+import { DeviceSwitch } from '@components/shared';
+
+const ContactDesktop = lazy(() => import('./contact.desktop'));
+const ContactMobile = lazy(() => import('./contact.mobile'));
 
 export default function Contact() {
-    const isMobile = useMobile();
-
-    return isMobile ? <ContactMobileWindow /> : <ContactDesktopWindow />;
+    return <DeviceSwitch Mobile={ContactMobile} Desktop={ContactDesktop} />;
 }

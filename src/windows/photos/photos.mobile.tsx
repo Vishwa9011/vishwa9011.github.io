@@ -40,4 +40,4 @@ const PhotosMobile = () => {
 
 const PhotosMobileWindow = MobileWindowWrapper(PhotosMobile, 'photos');
 
-export { PhotosMobileWindow };
+export default PhotosMobileWindow;

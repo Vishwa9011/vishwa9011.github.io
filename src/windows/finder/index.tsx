@@ -1,8 +1,9 @@
-import { useMobile } from '@/hooks/use-mobile';
-import { FinderDesktopWindow } from './finder.desktop';
-import { FinderMobileWindow } from './finder.mobile';
+import { DeviceSwitch } from '@components/shared';
+import { lazy } from 'react';
+
+const FinderDesktop = lazy(() => import('./finder.desktop'));
+const FinderMobile = lazy(() => import('./finder.mobile'));
 
 export default function Finder() {
-    const isMobile = useMobile();
-    return isMobile ? <FinderMobileWindow /> : <FinderDesktopWindow />;
+    return <DeviceSwitch Mobile={FinderMobile} Desktop={FinderDesktop} />;
 }

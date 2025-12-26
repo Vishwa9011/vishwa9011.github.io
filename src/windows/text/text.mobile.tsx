@@ -35,4 +35,4 @@ const TextMobile = () => {
 
 const TextMobileWindow = MobileWindowWrapper(TextMobile, 'txtfile');
 
-export { TextMobileWindow };
+export default TextMobileWindow;

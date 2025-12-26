@@ -42,4 +42,4 @@ const TextDesktop = () => {
 
 const TextDesktopWindow = WindowWrapper(TextDesktop, 'txtfile');
 
-export { TextDesktopWindow };
+export default TextDesktopWindow;

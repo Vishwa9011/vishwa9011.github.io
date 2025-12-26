@@ -115,4 +115,4 @@ const FinderMobile = () => {
 
 const FinderMobileWindow = MobileWindowWrapper(FinderMobile, 'finder');
 
-export { FinderMobileWindow };
+export default FinderMobileWindow;

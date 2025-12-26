@@ -40,4 +40,4 @@ const ResumeDesktop = () => {
 
 const ResumeDesktopWindow = WindowWrapper(ResumeDesktop, 'resume');
 
-export { ResumeDesktopWindow };
+export default ResumeDesktopWindow;

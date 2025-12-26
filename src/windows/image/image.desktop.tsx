@@ -32,4 +32,4 @@ const ImageDesktop = () => {
 
 const ImageDesktopWindow = WindowWrapper(ImageDesktop, 'imgfile');
 
-export { ImageDesktopWindow };
+export default ImageDesktopWindow;

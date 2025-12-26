@@ -1,15 +1,14 @@
-import { useMobile } from '@/hooks/use-mobile';
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
+import { DeviceSwitch } from '@components/shared';
 import useWindowStore from '@/store/window';
 
-const ResumeMobileWindow = lazy(() => import('./resume.mobile').then(m => ({ default: m.ResumeMobileWindow })));
-const ResumeDesktopWindow = lazy(() => import('./resume.desktop').then(m => ({ default: m.ResumeDesktopWindow })));
+const ResumeDesktop = lazy(() => import('./resume.desktop'));
+const ResumeMobile = lazy(() => import('./resume.mobile'));
 
 export default function Resume() {
-    const isMobile = useMobile();
     const isOpen = useWindowStore(state => state.windows.resume.isOpen);
 
     if (!isOpen) return null;
 
-    return <Suspense fallback={null}>{isMobile ? <ResumeMobileWindow /> : <ResumeDesktopWindow />}</Suspense>;
+    return <DeviceSwitch Mobile={ResumeMobile} Desktop={ResumeDesktop} />;
 }

@@ -46,6 +46,4 @@ const ContactDesktop = () => {
     );
 };
 
-const ContactDesktopWindow = WindowWrapper(ContactDesktop, 'contact');
-
-export { ContactDesktopWindow };
+export default WindowWrapper(ContactDesktop, 'contact');

@@ -1,10 +1,9 @@
-import { useMobile } from '@/hooks/use-mobile';
-import HomeDesktop from './home.desktop';
-import HomeMobile from './home.mobile';
+import { lazy } from 'react';
+import { DeviceSwitch } from '@components/shared';
+
+const HomeDesktop = lazy(() => import('./home.desktop'));
+const HomeMobile = lazy(() => import('./home.mobile'));
 
 export default function Home() {
-    const isMobile = useMobile();
-    return isMobile ? <HomeMobile /> : <HomeDesktop />;
+    return <DeviceSwitch Mobile={HomeMobile} Desktop={HomeDesktop} />;
 }
-
-export { HomeDesktop, HomeMobile };

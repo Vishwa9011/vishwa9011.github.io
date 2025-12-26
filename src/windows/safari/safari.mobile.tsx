@@ -62,4 +62,4 @@ const SafariMobile = () => {
 
 const SafariMobileWindow = MobileWindowWrapper(SafariMobile, 'safari');
 
-export { SafariMobileWindow };
+export default SafariMobileWindow;
