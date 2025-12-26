@@ -5,6 +5,7 @@ export const portfolioIdentity = {
     firstName: 'Vishwa Vivek',
     lastName: 'Yadav',
     terminalHandle: 'vishwavivek',
+    email: 'vishu842301@gmail.com',
 } as const;
 
 type NavIcon = {
@@ -153,28 +154,28 @@ const socials = [
         text: 'Github',
         icon: '/icons/github.svg',
         bg: '#f4656b',
-        link: 'https://github.com/JavaScript-Mastery-Pro',
+        link: 'https://github.com/vishwa9011',
     },
-    {
-        id: 2,
-        text: 'Platform',
-        icon: '/icons/atom.svg',
-        bg: '#4bcb63',
-        link: 'https://jsmastery.com/',
-    },
-    {
-        id: 3,
-        text: 'Twitter/X',
-        icon: '/icons/twitter.svg',
-        bg: '#ff866b',
-        link: 'https://x.com/jsmasterypro',
-    },
+    // {
+    //     id: 2,
+    //     text: 'Platform',
+    //     icon: '/icons/atom.svg',
+    //     bg: '#4bcb63',
+    //     link: 'https://jsmastery.com/',
+    // },
+    // {
+    //     id: 3,
+    //     text: 'Twitter/X',
+    //     icon: '/icons/twitter.svg',
+    //     bg: '#ff866b',
+    //     link: 'https://x.com/jsmasterypro',
+    // },
     {
         id: 4,
         text: 'LinkedIn',
         icon: '/icons/linkedin.svg',
         bg: '#05b6f6',
-        link: 'https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all',
+        link: 'www.linkedin.com/in/vishwa-vivek-yadav',
     },
 ];
 
@@ -209,19 +210,19 @@ const photosLinks = [
 const gallery = [
     {
         id: 1,
-        img: '/images/gal1.png',
+        img: '/images/gal1.webp',
     },
     {
         id: 2,
-        img: '/images/gal2.png',
+        img: '/images/gal1.webp',
     },
     {
         id: 3,
-        img: '/images/gal3.png',
+        img: '/images/gal1.webp',
     },
     {
         id: 4,
-        img: '/images/gal4.png',
+        img: '/images/gal1.webp',
     },
 ];
 
@@ -237,53 +238,53 @@ const WORK_LOCATION = {
         // ▶ Project 1
         {
             id: 5,
-            name: 'Nike Ecommerce Website Application',
+            name: 'AuditForge',
             icon: '/images/folder.png',
             kind: 'folder',
             position: 'top-10 left-5', // icon position inside Finder
-            windowPosition: 'top-[5vh] left-5', // optional: Finder window position
+            windowPosition: 'top-[5vh] left-14', // optional: Finder window position
             children: [
                 {
                     id: 1,
-                    name: 'Nike Project.txt',
+                    name: 'auditForge.txt',
                     icon: '/images/txt.png',
                     kind: 'file',
                     fileType: 'txt',
                     position: 'top-5 left-10',
                     description: [
-                        'The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.',
-                        'Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.',
-                        'Think of it like walking into a flagship Nike store—but right from your phone or laptop.',
-                        "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+                        'AuditForge is a frontend-first, IDE-style platform built for auditing Solidity smart contracts.',
+                        'Rather than a simple code viewer, it provides a focused developer environment with a Monaco-based editor, virtual filesystem, and keyboard-first workflow.',
+                        'Think of it as a lightweight auditing IDE that runs directly in the browser, without hidden automation or backend dependencies.',
+                        'It emphasizes explicit user actions, transparency, and performance, helping developers analyze contracts with clarity and control.',
                     ],
                 },
                 {
                     id: 2,
-                    name: 'nike.com',
+                    name: 'live demo',
                     icon: '/images/safari.png',
                     kind: 'file',
                     fileType: 'url',
-                    href: 'https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU',
+                    href: 'https://auditforge.vercel.app',
                     position: 'top-10 right-20',
                 },
                 {
                     id: 4,
-                    name: 'nike.png',
+                    name: 'auditforge.png',
                     icon: '/images/image.png',
                     kind: 'file',
                     fileType: 'img',
                     position: 'top-52 right-80',
-                    imageUrl: '/images/project-1.png',
+                    imageUrl: '/images/project-1.webp',
                 },
-                {
-                    id: 5,
-                    name: 'Design.fig',
-                    icon: '/images/plain.png',
-                    kind: 'file',
-                    fileType: 'fig',
-                    href: 'https://google.com',
-                    position: 'top-60 right-20',
-                },
+                // {
+                //     id: 5,
+                //     name: 'Design.fig',
+                //     icon: '/images/plain.png',
+                //     kind: 'file',
+                //     fileType: 'fig',
+                //     href: 'https://google.com',
+                //     position: 'top-60 right-20',
+                // },
             ],
         },
 
@@ -326,7 +327,7 @@ const WORK_LOCATION = {
                     kind: 'file',
                     fileType: 'img',
                     position: 'top-52 left-80',
-                    imageUrl: '/images/project-2.png',
+                    imageUrl: '/images/project-1.webp',
                 },
                 {
                     id: 5,
@@ -379,7 +380,7 @@ const WORK_LOCATION = {
                     kind: 'file',
                     fileType: 'img',
                     position: 'top-52 right-80',
-                    imageUrl: '/images/project-3.png',
+                    imageUrl: '/images/project-1.webp',
                 },
                 {
                     id: 5,

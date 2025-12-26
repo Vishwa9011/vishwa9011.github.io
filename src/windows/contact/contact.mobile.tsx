@@ -1,7 +1,7 @@
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import useWindowStore from '@/store/window';
 import { MobileWindowHeader } from '@components/shared/mobile-window-header';
-import { socials } from '@constants';
+import { portfolioIdentity, socials } from '@constants';
 
 const ContactMobile = () => {
     const { closeWindow } = useWindowStore();
@@ -9,18 +9,18 @@ const ContactMobile = () => {
         <>
             <MobileWindowHeader title="Contact Me" onClose={() => closeWindow('contact')} />
             <div className="space-y-5 p-5">
-                <img src="/images/adrian.jpg" alt="adrian" className="w-20 rounded-full" />
+                <img src="/images/vishwa.webp" alt={portfolioIdentity.fullName} className="w-20 rounded-full" />
 
                 <h3 className="text-xl font-semibold">Let's Connect</h3>
                 <p className="text-muted-foreground">Got an idea? A bug to squash? Or just wanna talk tech? I'm in.</p>
                 <p>
                     <a
-                        href="mailTo:vishu842301@gmail.com"
+                        href={`mailTo:${portfolioIdentity.email}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-link hover:text-link-hover underline underline-offset-2"
                     >
-                        vishu842301@gmail.com
+                        {portfolioIdentity.email}
                     </a>
                 </p>
                 <ul className="flex flex-col justify-center gap-2">

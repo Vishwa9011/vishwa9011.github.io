@@ -1,4 +1,4 @@
-import { socials } from '@constants';
+import { portfolioIdentity, socials } from '@constants';
 import WindowWrapper from '@/hoc/window-wrapper';
 import { WindowControls } from '@components';
 
@@ -14,18 +14,18 @@ const ContactDesktop = () => {
             </div>
 
             <div className="space-y-5 p-5">
-                <img src="/images/adrian.jpg" alt="adrian" className="w-20 rounded-full" />
+                <img src="/images/vishwa.webp" alt={portfolioIdentity.fullName} className="w-20 rounded-full" />
 
                 <h3 className="text-xl font-semibold">Let's Connect</h3>
                 <p className="text-muted-foreground">Got an idea? A bug to squash? Or just wanna talk tech? I'm in.</p>
                 <p>
                     <a
-                        href="mailTo:vishu842301@gmail.com"
+                        href={`mailTo:${portfolioIdentity.email}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-link hover:text-link-hover underline underline-offset-2"
                     >
-                        vishu842301@gmail.com
+                        {portfolioIdentity.email}
                     </a>
                 </p>
                 <ul className="flex items-center gap-3">
