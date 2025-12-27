@@ -25,6 +25,7 @@ body {
 @theme {
     --font-georama: 'Georama', sans-serif;
     --font-roboto: 'Roboto Mono', monospace;
+    --breakpoint-2xs: 375px;
     --breakpoint-3xl: 1920px;
 }
 

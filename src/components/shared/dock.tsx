@@ -113,7 +113,7 @@ const Dock = () => {
                                 alt={`icon-${name}`}
                                 loading="lazy"
                                 className={cn(
-                                    'size-14 sm:size-14 @max-xs:size-20',
+                                    '2xs:size-20 size-14 sm:size-14',
                                     canOpen ? 'object-cover object-center' : 'object-cover object-center opacity-60',
                                 )}
                             />
