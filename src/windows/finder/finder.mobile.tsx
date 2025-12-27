@@ -1,7 +1,7 @@
 import useWindowStore from '@/store/window';
 import type { Location } from '@/types';
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
-import { MobileWindowHeader } from '@components/shared/mobile-window-header';
+import { MobileWindowHeader } from '@components/shared';
 import { locations } from '@constants';
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';

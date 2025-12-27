@@ -1,5 +1,5 @@
 import WindowWrapper from '@/hoc/window-wrapper';
-import { WindowControls } from '@components';
+import { WindowControls } from '@components/shared';
 import { blogPosts } from '@constants';
 import { ChevronLeft, ChevronRight, Copy, MoveRight, PanelLeft, Plus, Search, Share, ShieldHalf } from 'lucide-react';
 

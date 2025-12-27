@@ -2,7 +2,7 @@ import { Document, Page } from 'react-pdf';
 import useWindowStore from '@/store/window';
 import { useEffect, useRef, useState } from 'react';
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
-import { MobileWindowHeader } from '@components/shared/mobile-window-header';
+import { MobileWindowHeader } from '@components/shared';
 import { initReactPdf } from '@/lib/react-pdf';
 import { Download } from 'lucide-react';
 

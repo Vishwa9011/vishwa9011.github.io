@@ -2,7 +2,7 @@ import useWindowStore from '@/store/window';
 import { Check, ChevronRight, Flag } from 'lucide-react';
 import { portfolioIdentity, techStack } from '@constants';
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
-import { MobileWindowHeader } from '@components/shared/mobile-window-header';
+import { MobileWindowHeader } from '@components/shared';
 
 const TerminalMobile = () => {
     const { closeWindow } = useWindowStore();

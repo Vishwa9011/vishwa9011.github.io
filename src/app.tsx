@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Draggable } from 'gsap/Draggable';
 
 import { useUiStore } from './store/ui-store';
-import { Navbar, Welcome, Dock } from '@components';
+import { Dock, Navbar, Welcome } from '@components/shared';
 import { Finder, Resume, Safari, Terminal, Text, Image, Contact, Home, Photos } from '@/windows';
 
 gsap.registerPlugin(Draggable);

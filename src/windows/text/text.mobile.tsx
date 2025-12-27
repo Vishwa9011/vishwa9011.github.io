@@ -1,7 +1,7 @@
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import useWindowStore from '@/store/window';
 import type { LocationFile } from '@/types';
-import { MobileWindowHeader } from '@components/shared/mobile-window-header';
+import { MobileWindowHeader } from '@components/shared';
 
 const TextMobile = () => {
     const { windows, closeWindow } = useWindowStore();

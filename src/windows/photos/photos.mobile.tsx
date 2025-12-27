@@ -1,6 +1,6 @@
 import { gallery } from '@constants';
 import useWindowStore from '@/store/window';
-import { MobileWindowHeader } from '@components/shared/mobile-window-header';
+import { MobileWindowHeader } from '@components/shared';
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 
 const PhotosMobile = () => {

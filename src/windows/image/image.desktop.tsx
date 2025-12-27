@@ -1,7 +1,7 @@
 import WindowWrapper from '@/hoc/window-wrapper';
 import useWindowStore from '@/store/window';
 import type { LocationFile } from '@/types';
-import { WindowControls } from '@components';
+import { WindowControls } from '@components/shared';
 
 const ImageDesktop = () => {
     const { windows } = useWindowStore();

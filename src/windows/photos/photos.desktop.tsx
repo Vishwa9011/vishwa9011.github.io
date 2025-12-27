@@ -1,6 +1,6 @@
 import WindowWrapper from '@/hoc/window-wrapper';
 import useWindowStore from '@/store/window';
-import { WindowControls } from '@components';
+import { WindowControls } from '@components/shared';
 import { gallery, photosLinks } from '@constants';
 import { Mail, Search } from 'lucide-react';
 

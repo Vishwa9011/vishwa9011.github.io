@@ -1,6 +1,6 @@
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
 import useWindowStore from '@/store/window';
-import { MobileWindowHeader } from '@components/shared/mobile-window-header';
+import { MobileWindowHeader } from '@components/shared';
 import { blogPosts } from '@constants';
 import { BookOpen, ChevronLeft, ChevronRight, Copy, Mic, MoveRight, Search, Share } from 'lucide-react';
 

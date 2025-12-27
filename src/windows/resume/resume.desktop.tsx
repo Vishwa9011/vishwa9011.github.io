@@ -1,5 +1,5 @@
 import { Download } from 'lucide-react';
-import { WindowControls } from '@components';
+import { WindowControls } from '@components/shared';
 import WindowWrapper from '@/hoc/window-wrapper';
 
 import { Document, Page } from 'react-pdf';

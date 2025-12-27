@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import useLocationStore from '@/store/location';
 import useWindowStore from '@/store/window';
 import type { Location } from '@/types';
-import { WindowControls } from '@components';
+import { WindowControls } from '@components/shared';
 import { locations } from '@constants';
 import { Search } from 'lucide-react';
 import { windowKeyForFileType } from './window-key';

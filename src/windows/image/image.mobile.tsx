@@ -1,7 +1,7 @@
 import useWindowStore from '@/store/window';
 import type { LocationFile } from '@/types';
 import { MobileWindowWrapper } from '@/hoc/mobile-window-wrapper';
-import { MobileWindowHeader } from '@components/shared/mobile-window-header';
+import { MobileWindowHeader } from '@components/shared';
 
 const ImageMobile = () => {
     const { windows, closeWindow } = useWindowStore();

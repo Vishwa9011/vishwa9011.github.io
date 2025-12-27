@@ -1,6 +1,6 @@
-import { portfolioIdentity, socials } from '@constants';
 import WindowWrapper from '@/hoc/window-wrapper';
-import { WindowControls } from '@components';
+import { WindowControls } from '@components/shared';
+import { portfolioIdentity, socials } from '@constants';
 
 const ContactDesktop = () => {
     return (

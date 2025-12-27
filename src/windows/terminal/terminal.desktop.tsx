@@ -1,5 +1,5 @@
 import { Check, Flag } from 'lucide-react';
-import { WindowControls } from '@components';
+import { WindowControls } from '@components/shared';
 import WindowWrapper from '@/hoc/window-wrapper';
 import { portfolioIdentity, techStack } from '@constants';
 

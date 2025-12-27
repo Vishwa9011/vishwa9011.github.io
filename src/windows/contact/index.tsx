@@ -1,6 +1,6 @@
 import { lazy } from 'react';
-import { DeviceSwitch } from '@components/shared';
 import useWindowStore from '@/store/window';
+import { DeviceSwitch } from '@components/shared';
 
 const ContactDesktop = lazy(() => import('./contact.desktop'));
 const ContactMobile = lazy(() => import('./contact.mobile'));
