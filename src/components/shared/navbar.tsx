@@ -63,15 +63,15 @@ function MobileNavbar() {
             )}
             style={{ zIndex: nextZIndex }}
         >
-            <p>{dayjs().format('h:mm A')}</p>
+            <p className="text-xs whitespace-nowrap @max-xs:text-base">{dayjs().format('h:mm A')}</p>
 
-            <div className="mx-auto h-6 w-40 rounded-full bg-black/80"></div>
+            <div className="mx-auto h-5 w-40 rounded-full bg-black/80 @max-xs:h-6"></div>
             <ul className="flex items-center gap-2">
                 <li>
-                    <Wifi className="size-4" />
+                    <Wifi className="size-3 @max-xs:size-4" />
                 </li>
                 <li>
-                    <Battery className="size-4" />
+                    <Battery className="size-3 @max-xs:size-4" />
                 </li>
             </ul>
         </section>

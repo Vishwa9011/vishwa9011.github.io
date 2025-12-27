@@ -78,11 +78,13 @@ const Welcome = () => {
             <p ref={subtitleRef} className="mb-3">
                 {renderText(
                     `Hey, I'm! ${portfolioIdentity.firstName} Welcome to my`,
-                    'text-2xl sm:text-3xl font-georama',
+                    'text-lg @max-xs:text-2xl sm:text-3xl font-georama',
                     100,
                 )}
             </p>
-            <h2 ref={titleRef}>{renderText('portfolio', 'sm:text-9xl text-7xl italic font-georama', 400)}</h2>
+            <h2 ref={titleRef}>
+                {renderText('portfolio', 'sm:text-9xl text-5xl @max-xs:text-7xl italic font-georama', 400)}
+            </h2>
         </section>
     );
 };

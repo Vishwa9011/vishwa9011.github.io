@@ -90,7 +90,7 @@ const Dock = () => {
     return (
         <section
             id="dock"
-            className="absolute bottom-5 left-1/2 z-50 w-full -translate-x-1/2 px-5 select-none sm:w-auto sm:px-0"
+            className="absolute bottom-5 left-1/2 z-50 w-max -translate-x-1/2 px-5 select-none sm:w-auto sm:px-0"
         >
             <div
                 ref={dockRef}
@@ -113,7 +113,7 @@ const Dock = () => {
                                 alt={`icon-${name}`}
                                 loading="lazy"
                                 className={cn(
-                                    'size-14',
+                                    'size-14 sm:size-14 @max-xs:size-20',
                                     canOpen ? 'object-cover object-center' : 'object-cover object-center opacity-60',
                                 )}
                             />
