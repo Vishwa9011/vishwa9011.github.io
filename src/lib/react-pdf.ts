@@ -6,6 +6,6 @@ let initialized = false;
 
 export function initReactPdf() {
     if (initialized) return;
-    pdfjs.GlobalWorkerOptions.workerSrc = `${import.meta.env.BASE_URL}pdf.worker.min.js`;
+    pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
     initialized = true;
 }
