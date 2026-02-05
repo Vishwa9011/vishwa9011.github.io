@@ -157,7 +157,7 @@ const socials = [
         text: 'LinkedIn',
         icon: '/icons/linkedin.svg',
         bg: '#05b6f6',
-        link: 'https://www.linkedin.com/in/vishwa-vivek-yadav',
+        link: 'https://www.linkedin.com/in/vishwa9011',
     },
 ];
 
@@ -242,7 +242,7 @@ const WORK_LOCATION = {
                 },
                 {
                     id: 2,
-                    name: 'auditforge.vercel.app',
+                    name: 'auditforge.app',
                     icon: '/images/safari.png',
                     kind: 'file',
                     fileType: 'url',
@@ -270,58 +270,58 @@ const WORK_LOCATION = {
             ],
         },
 
-        // // ▶ Project 2
-        // {
-        //     id: 6,
-        //     name: 'AI Resume Analyzer',
-        //     icon: '/images/folder.png',
-        //     kind: 'folder',
-        //     position: 'top-52 right-80',
-        //     windowPosition: 'top-[20vh] left-7',
-        //     children: [
-        //         {
-        //             id: 1,
-        //             name: 'AI Resume Analyzer Project.txt',
-        //             icon: '/images/txt.png',
-        //             kind: 'file',
-        //             fileType: 'txt',
-        //             position: 'top-5 right-10',
-        //             description: [
-        //                 'AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.',
-        //                 'Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.',
-        //                 'Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.',
-        //                 "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
-        //             ],
-        //         },
-        //         {
-        //             id: 2,
-        //             name: 'ai-resume-analyzer.com',
-        //             icon: '/images/safari.png',
-        //             kind: 'file',
-        //             fileType: 'url',
-        //             href: 'https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl',
-        //             position: 'top-20 left-20',
-        //         },
-        //         {
-        //             id: 4,
-        //             name: 'ai-resume-analyzer.png',
-        //             icon: '/images/image.png',
-        //             kind: 'file',
-        //             fileType: 'img',
-        //             position: 'top-52 left-80',
-        //             imageUrl: '/images/project-1.webp',
-        //         },
-        //         {
-        //             id: 5,
-        //             name: 'Design.fig',
-        //             icon: '/images/plain.png',
-        //             kind: 'file',
-        //             fileType: 'fig',
-        //             href: 'https://google.com',
-        //             position: 'top-60 left-5',
-        //         },
-        //     ],
-        // },
+        // ▶ Project 2
+        {
+            id: 6,
+            name: 'Gatherly',
+            icon: '/images/folder.png',
+            kind: 'folder',
+            position: 'top-52 right-80',
+            windowPosition: 'top-[20vh] left-14',
+            children: [
+                {
+                    id: 1,
+                    name: 'gatherly.txt',
+                    icon: '/images/txt.png',
+                    kind: 'file',
+                    fileType: 'txt',
+                    position: 'top-5 right-10',
+                    description: [
+                        'Gatherly is an all-in-one event management platform designed for effortless event creation and ticketing.',
+                        'Organizers can launch paid or free events, manage registrations, and monitor attendance without technical complexity.',
+                        'The platform focuses on speed, clarity, and ease—so hosts can focus on the experience, not the logistics.',
+                        'Powered by Next.js and Tailwind, Gatherly delivers a fast, scalable, and mobile-first experience.',
+                    ],
+                },
+                {
+                    id: 2,
+                    name: 'gatherlyapp.app',
+                    icon: '/images/safari.png',
+                    kind: 'file',
+                    fileType: 'url',
+                    href: 'https://gatherlyapp.vercel.app/',
+                    position: 'top-20 left-20',
+                },
+                {
+                    id: 4,
+                    name: 'gatherly.webp',
+                    icon: '/images/image.png',
+                    kind: 'file',
+                    fileType: 'img',
+                    position: 'top-52 left-80',
+                    imageUrl: '/images/gatherly.webp',
+                },
+                // {
+                //     id: 5,
+                //     name: 'Design.fig',
+                //     icon: '/images/plain.png',
+                //     kind: 'file',
+                //     fileType: 'fig',
+                //     href: 'https://google.com',
+                //     position: 'top-60 left-5',
+                // },
+            ],
+        },
 
         // // ▶ Project 3
         // {
